@@ -1,35 +1,109 @@
 ---
-title: "git_economists_presentation"
+title: "Git for economist"
 author: "Heili Hein & Nicolas Reigl"
-date: "29 12 2020"
-output: slidy_presentation
+date: "29-12-2020"
+output:
+  revealjs::revealjs_presentation:
+    theme: sky
+    highlight: pygments
+    center: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## R Markdown
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# Intro 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+- Outreach: 
+  - We all have some skills we can share 
+- Not related to Eesti Pank/ Taltech
+- Short & simple
+  - There are much better *technical* tutorials
+- Concepts
+- Live-tutorial
+- Hands on? 
 
-## Slide with Bullets
+# What is git? 
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+Git is officially defined as a *distributed version control system* (VCS)
 
-## Slide with R Output
+- A system that tracks changes to our project files over time
+  - record project changes and go back to specific versions of tracked files, at any given point in time 
+  - system can be used by many people to collaborate efficiently
+    - each developer can have their own version of the project, distributed on their computer
+    - later the individual versions of the project can be merged and adapted to the main version of the project
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
 
-## Slide with Plot
+# Why learn git (as an economist)? 
 
-```{r pressure}
-plot(pressure)
-```
+## A modern economist 
 
+> The master-economist must possess a rare combination of gifts .... He must be mathematician, historian, statesman, philosopher—in some degree....
+
+John Maynard Keynes
+
+Economists today: 
+
+  - Statistical programming 
+  - DevTools 
+  - Collaborate interdisciplinary
+
+## Economists work with code 
+
+but it seems we are not adopting many important tools from the experts on code
+
+Why? 
+
+ - Learning new things is costly 
+ - Tools we are not familiar or aware of
+ - Rethink our workflows 
+ - Its simply not thought! 
+
+There are other things beside of *Git* economists might want to learn about........-> different tutorial
+
+## Who uses Git? 
+
+- [NY FED](https://github.com/FRBNY-DSGE)
+- [QuantEcon Project](https://github.com/QuantEcon/)
+- [ScPo Department of Economics](https://github.com/ScPoEcon)
+- [Dynare](https://git.dynare.org/Dynare)
+- [FixEst Package](https://github.com/lrberge/fixest)
+- [victor chernozhukov](https://www.victorchernozhukov.com/code-and-notebooks)
+
+
+
+# GitFlow of Economists
+
+## Version control 
+
+ - Co-authored research is common: Version control allows easier tracking of collaboration and changes
+ - Also useful in solo projects
+
+
+## 
+
+Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_revised2_revised.txt?
+
+<img data-src="phd101212s.png" height="520" width="800" />
+
+  - 'Piled Higher and Deeper' by Jorge Cham www.phdcomics.com
+
+## 
+
+
+## Reproducability 
+
+- 
+
+## Teaching 
+
+
+
+## Interdiscipliniary
+
+
+# Learning git 
+
+- Git is 
