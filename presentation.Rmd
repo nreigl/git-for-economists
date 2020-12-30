@@ -4,9 +4,13 @@ author: "Heili Hein & Nicolas Reigl"
 date: "29-12-2020"
 output:
   revealjs::revealjs_presentation:
-    theme: sky
-    highlight: pygments
-    center: true
+    theme: simple
+    transition: default
+    self_contained: false
+    reveal_plugins: notes
+    css: styles.css
+    center: false
+    mathjax: NULL
 ---
 
 ```{r setup, include=FALSE}
@@ -17,13 +21,32 @@ knitr::opts_chunk$set(echo = FALSE)
 # Intro 
 
 - Outreach: 
-  - We all have some skills we can share 
-- Not related to Eesti Pank/ Taltech
-- Short & simple
-  - There are much better *technical* tutorials
+  - We all have some skills we can share
+
+## Plan for today 
+
+- Short & low level introduction to git & github focused on what might be useful for economists
 - Concepts
 - Live-tutorial
 - Hands on? 
+
+
+## Disclaimer 
+
+- Not related to Eesti Pank/ Taltech
+- We are not computer science experts 
+    - content is based on our limited CS background and programming experience 
+- Opinionated views on workflows and best practices 
+
+
+## Resources 
+
+
+- [Git docs](https://git-scm.com/doc)
+- [Atlasian git tutorial](https://www.atlassian.com/git/tutorials) 
+- [Software Carpentry git tutorial](https://swcarpentry.github.io/git-novice/)
+- [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
+- [Flight rules for Git](https://github.com/k88hudson/git-flight-rules/blob/master/README.md)
 
 # What is git? 
 
@@ -35,10 +58,22 @@ Git is officially defined as a *distributed version control system* (VCS)
     - each developer can have their own version of the project, distributed on their computer
     - later the individual versions of the project can be merged and adapted to the main version of the project
 
+## What is github? 
+
+- Github is an online platform built for collaborative software development that uses the git protocol
+- Github provides free unlimited private repos 
+- Paid subscriptions for a wide range of services
+
+
+Alternatives 
+
+- [Gitlab](https://about.gitlab.com)
+- Host your private git server
+
 
 # Why learn git (as an economist)? 
 
-## A modern economist 
+## 
 
 > The master-economist must possess a rare combination of gifts .... He must be mathematician, historian, statesman, philosopher—in some degree....
 
@@ -57,53 +92,107 @@ but it seems we are not adopting many important tools from the experts on code
 Why? 
 
  - Learning new things is costly 
- - Tools we are not familiar or aware of
  - Rethink our workflows 
  - Its simply not thought! 
 
-There are other things beside of *Git* economists might want to learn about........-> different tutorial
 
 ## Who uses Git? 
 
-- [NY FED](https://github.com/FRBNY-DSGE)
-- [QuantEcon Project](https://github.com/QuantEcon/)
-- [ScPo Department of Economics](https://github.com/ScPoEcon)
-- [Dynare](https://git.dynare.org/Dynare)
-- [FixEst Package](https://github.com/lrberge/fixest)
-- [victor chernozhukov](https://www.victorchernozhukov.com/code-and-notebooks)
+- [Instituations (NY FED)](https://github.com/FRBNY-DSGE)
+- [Econ Projects (QuantEcon Project)](https://github.com/QuantEcon/)
+- [University Departments (ScPo Department of Economics)](https://github.com/ScPoEcon)
+- [Econ software platforms (Dynare)](https://git.dynare.org/Dynare)
+- [Econometric packages (FixEst Package)](https://github.com/lrberge/fixest)
+- [Individual economists (Victor Chernozhukov)](https://www.victorchernozhukov.com/code-and-notebooks)
 
 
-
-# GitFlow of Economists
-
-## Version control 
-
- - Co-authored research is common: Version control allows easier tracking of collaboration and changes
- - Also useful in solo projects
-
+# Why use version control 
 
 ## 
-
 Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_revised2_revised.txt?
 
 <img data-src="phd101212s.png" height="520" width="800" />
 
   - 'Piled Higher and Deeper' by Jorge Cham www.phdcomics.com
 
-## 
+##
 
+ - Keep track of changes to text files line-by-line over time
+ - Keep track of what you changed between different versions
+ - Branching and merging: Experiment safely; integrate when done
+ - Revert any change if needed
+ - Back up and distribute copies of files
+ - Co-authored research is common: Version control allows easier tracking of collaboration and changes
+    - Work offline and asynchronously
+    - Collaborate remotely, centralized,  in real time
+ 
 
 ## Reproducability 
 
-- 
+- Many journals require data & code with submissions
+- Proper version control makes reproducing results easier
+- Github offers tools for code testing and code deployment 
 
+ 
 ## Teaching 
 
-
-
-## Interdiscipliniary
+- Using github to teach encourages students to use git and github themselves --> important industry skill
+- Allows to update and test new teaching material before 
+- Easier to upload and distribute new teaching material (when using Github)
 
 
 # Learning git 
 
-- Git is 
+## Git concepts 
+
+ - **repository(repo)**: a collection of files and their history
+ - **commit**: a snapshot of your files at a given time
+ - **Staging area**: where you list files that will go into your next commit
+ - **(local) Repository**: where the commits are stored; ie, it contains thef ull history of previous versions of the files in the repository, and relevant metadata
+ - **(remote) Repository**: a version of the repository hosted elsewhere
+ - **gitignore**: a file that declares what should **NOT** be tracked
+ - **Main (or Master)**: Main version of the code
+ - **Branches**: sequence of commits which can trace *alternative* history and versions of your code in the repo 
+ - *HEAD*: pointer to branch ("Where your next commit would go")
+
+## Basic git commands 
+
+- **git init**: start a new repository in the working directory
+- **git status**: query the state of your director
+- **git add**: add new or modified files to the staging area
+- **git commit**: commit changes in the index 
+- **git checkout**: create or switch branch
+- **git diff**: show what changed wrt. the last commit or index
+- **git log**: show the commit history
+- **git push**: send your local changes to a remote server
+- **git pull (git fetch; git merge)**: get last changes from a remote 
+
+
+## Setup 
+
+- [Download git](https://git-scm.com/downloads)
+- Install and if necessary set path
+- Terminal editor
+ - Various shell addons for various terminals
+- Configure your name and & email 
+
+```git
+git config --global user.name "Your name"
+git config --global user.email "your@email.com"
+```
+
+Collaborate with others: 
+
+- Create Github account 
+
+## GUI 
+
+- RStudio
+- VSCode 
+  - Gitlens 
+- Gitkraken
+
+# Workflow 
+
+## Basic Workflow 
+
