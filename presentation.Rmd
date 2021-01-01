@@ -41,7 +41,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Resources 
 
-
 - [Git docs](https://git-scm.com/doc)
 - [Atlasian git tutorial](https://www.atlassian.com/git/tutorials) 
 - [Software Carpentry git tutorial](https://swcarpentry.github.io/git-novice/)
@@ -161,11 +160,13 @@ Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_r
 - **git status**: query the state of your director
 - **git add**: add new or modified files to the staging area
 - **git commit**: commit changes in the index 
-- **git checkout**: create or switch branch
+- **git branch**: create  or list branch
+- **git checkout**: switch branch
 - **git diff**: show what changed wrt. the last commit or index
 - **git log**: show the commit history
 - **git push**: send your local changes to a remote server
 - **git pull (git fetch; git merge)**: get last changes from a remote 
+- **git clone**: create local copy of public source project
 
 
 ## Setup 
@@ -181,6 +182,21 @@ git config --global user.name "Your name"
 git config --global user.email "your@email.com"
 ```
 
+Tips: 
+```git
+git config --global core.editor "code --wait" # sets VS code as core editor
+git config --global -e
+```
+
+Possible trap: 
+```git
+git config --global core.autocrlf true # Windows
+git config --global core.autocrlf input # OSX
+```
+
+
+
+## 
 Collaborate with others: 
 
 - Create Github account 
@@ -192,7 +208,40 @@ Collaborate with others:
   - Gitlens 
 - Gitkraken
 
-# Workflow 
+# Git Workflows 
 
 ## Basic Workflow 
 
+- 1. Create an empty folder
+- 2. Init repository (**git init**) 
+- 3. Add files & annotate them 
+- 4. Add the files to the staging area (**git add**)
+- 5. Commit the files (**git commit**)
+
+
+## Personal remote workflow 
+
+- Steps 1-5
+- Create an *empty* repo on github 
+- Link the github remote to your local repo
+- Push from the local repo to the remote
+- After working on the local repo, repeat steps 4-5
+- If the working tree is not *clean* before pulling from remote, repeat steps 4-5
+- Pull from the remote to the local repo 
+
+## Collaborating workflow 
+
+- Step 1
+- Fork a public repo 
+- Clone the *forked* repo to local empty folder
+- (*Optional: create a dev branch*)
+- Work on the forked repo (*main or dev and then merge back to main*)
+- Push back to the personal fork
+- Create a pull request
+- Review process of pull request 
+
+
+# Live tutorial 
+
+
+# Conlusions 

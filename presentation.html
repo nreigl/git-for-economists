@@ -634,11 +634,13 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li><strong>git status</strong>: query the state of your director</li>
 <li><strong>git add</strong>: add new or modified files to the staging area</li>
 <li><strong>git commit</strong>: commit changes in the index</li>
-<li><strong>git checkout</strong>: create or switch branch</li>
+<li><strong>git branch</strong>: create or list branch</li>
+<li><strong>git checkout</strong>: switch branch</li>
 <li><strong>git diff</strong>: show what changed wrt. the last commit or index</li>
 <li><strong>git log</strong>: show the commit history</li>
 <li><strong>git push</strong>: send your local changes to a remote server</li>
 <li><strong>git pull (git fetch; git merge)</strong>: get last changes from a remote</li>
+<li><strong>git clone</strong>: create local copy of public source project</li>
 </ul>
 </section>
 <section id="setup" class="slide level2">
@@ -652,7 +654,19 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </ul>
 <pre class="git"><code>git config --global user.name &quot;Your name&quot;
 git config --global user.email &quot;your@email.com&quot;</code></pre>
-<p>Collaborate with others: - Create Github account</p>
+<p>Tips:</p>
+<pre class="git"><code>git config --global core.editor &quot;code --wait&quot; # sets VS code as core editor
+git config --global -e</code></pre>
+<p>Possible trap:</p>
+<pre class="git"><code>git config --global core.autocrlf true # Windows
+git config --global core.autocrlf input # OSX</code></pre>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p>Collaborate with others:</p>
+<ul>
+<li>Create Github account</li>
+</ul>
 </section>
 <section id="gui" class="slide level2">
 <h2>GUI</h2>
@@ -666,13 +680,64 @@ git config --global user.email &quot;your@email.com&quot;</code></pre>
 </ul>
 </section></section>
 <section>
-<section id="workflow" class="title-slide slide level1">
-<h1>Workflow</h1>
+<section id="git-workflows" class="title-slide slide level1">
+<h1>Git Workflows</h1>
 
 </section>
 <section id="basic-workflow" class="slide level2">
 <h2>Basic Workflow</h2>
+<ul>
+<li><ol type="1">
+<li>Create an empty folder</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Init repository (<strong>git init</strong>)</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Add files &amp; annotate them</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Add the files to the staging area (<strong>git add</strong>)</li>
+</ol></li>
+<li><ol start="5" type="1">
+<li>Commit the files (<strong>git commit</strong>)</li>
+</ol></li>
+</ul>
+</section>
+<section id="personal-remote-workflow" class="slide level2">
+<h2>Personal remote workflow</h2>
+<ul>
+<li>Steps 1-5</li>
+<li>Create an <em>empty</em> repo on github</li>
+<li>Link the github remote with your local repo</li>
+<li>Push from the local repo to the remote</li>
+<li>After working on the local repo, repeat steps 4-5</li>
+<li>If the working tree is not <em>clean</em> before pulling from remote, repeat steps 4-5</li>
+<li>Pull from the remote to the local repo</li>
+</ul>
+</section>
+<section id="collaborating-workflow" class="slide level2">
+<h2>Collaborating workflow</h2>
+<ul>
+<li>Step 1</li>
+<li>Fork a public repo</li>
+<li>Clone the <em>forked</em> repo to local empty folder</li>
+<li>(<em>Optional: create a dev branch</em>)</li>
+<li>Work on the forked repo (<em>main or dev and then merge back to main</em>)</li>
+<li>Push back to the personal fork</li>
+<li>Create a pull request</li>
+<li>Review process of pull request</li>
+</ul>
 </section></section>
+<section id="live-tutorial" class="title-slide slide level1">
+<h1>Live tutorial</h1>
+
+</section>
+
+<section id="conlusions" class="title-slide slide level1">
+<h1>Conlusions</h1>
+
+</section>
     </div>
   </div>
 
