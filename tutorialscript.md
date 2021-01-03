@@ -197,6 +197,12 @@ git merge master development
 ```
 
 
+## Switch to GUI 
+
+Open the folder in VS Code and show the audiance around. 
+
+
+
 ## 4. Github
 
 Here we will show how to create a public repo on github, setup the repo, link the remote, pull and push to the repo.Here we will show how to create a public repo on github, setup the repo, link the remote, pull and push to the repo.  

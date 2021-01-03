@@ -1,65 +1,99 @@
 ---
 title: "Git for economist"
 author: "Heili Hein & Nicolas Reigl"
-date: "29-12-2020"
+date: "TalTech / Eesti Pank|" # `r format(Sys.time(), '%d %B %Y')`
 output:
-  revealjs::revealjs_presentation:
-    theme: simple
-    transition: default
-    self_contained: false
-    reveal_plugins: notes
-    css: styles.css
-    center: false
-    mathjax: NULL
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align="center", #fig.width=6, fig.height=4.5, 
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T#, echo=F, warning=F, message=F
+  )
 ```
 
 
-# Intro 
 
-- Outreach: 
-  - We all have some skills we can share
+class: inverse, center, middle
+name: prologue
 
-## Plan for today 
+# Prologue
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+---
+# To do
+
+- Add credits 
+- Figure of standard workflows 
+- Improve "Learning git steps"
+- Date in the YAML: Heili, why does the date bug out?
+
+
+---
+# Outreach
+
+- We all have some skills we can share
+
+
+Disclaimer
+
+- Not related to Eesti Pank/ Taltech
+- We are not computer science experts 
+- content is based on our limited CS background and programming experience 
+- Opinionated views on workflows and best practices 
+
+
+---
+# Intro
+
+Plan for today 
 
 - Short & low level introduction to git & github focused on what might be useful for economists
 - Concepts
 - Live-tutorial
-- Hands on? 
 
 
-## Disclaimer 
 
-- Not related to Eesti Pank/ Taltech
-- We are not computer science experts 
-    - content is based on our limited CS background and programming experience 
-- Opinionated views on workflows and best practices 
+---
+# Resources 
 
-
-## Resources 
+Best in class:
 
 - [Git docs](https://git-scm.com/doc)
 - [Atlasian git tutorial](https://www.atlassian.com/git/tutorials) 
 - [Software Carpentry git tutorial](https://swcarpentry.github.io/git-novice/)
 - [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
+- [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
 - [Flight rules for Git](https://github.com/k88hudson/git-flight-rules/blob/master/README.md)
 
+
+---
 # What is git? 
 
 Git is officially defined as a *distributed version control system* (VCS)
 
 - A system that tracks changes to our project files over time
-  - record project changes and go back to specific versions of tracked files, at any given point in time 
-  - system can be used by many people to collaborate efficiently
-    - each developer can have their own version of the project, distributed on their computer
-    - later the individual versions of the project can be merged and adapted to the main version of the project
+- record project changes and go back to specific versions of tracked files, at any given point in time 
+- system can be used by many people to collaborate efficiently
+- each developer can have their own version of the project, distributed on their computer
+- later the individual versions of the project can be merged and adapted to the main version of the project
 
-## What is github? 
+---
+# What is github? 
 
-- Github is an online platform built for collaborative software development that uses the git protocol
+- [Github](github.com) is an online platform built for collaborative software development that uses the git protocol
 - Github provides free unlimited private repos 
 - Paid subscriptions for a wide range of services
 
@@ -70,33 +104,35 @@ Alternatives
 - Host your private git server
 
 
+---
 # Why learn git (as an economist)? 
-
-## 
 
 > The master-economist must possess a rare combination of gifts .... He must be mathematician, historian, statesman, philosopher—in some degree....
 
 John Maynard Keynes
 
 Economists today: 
+  
+- Statistical programming 
+- DevTools 
+- Collaborate (interdisciplinary)
 
-  - Statistical programming 
-  - DevTools 
-  - Collaborate interdisciplinary
 
-## Economists work with code 
+---
+# Economists work with code 
 
 but it seems we are not adopting many important tools from the experts on code
 
 Why? 
+  
+- Learning new things is costly 
+- Rethink our workflows 
+- Its simply not thought! 
 
- - Learning new things is costly 
- - Rethink our workflows 
- - Its simply not thought! 
 
-
-## Who uses Git? 
-
+---
+# Who uses Git? 
+  
 - [Instituations (NY FED)](https://github.com/FRBNY-DSGE)
 - [Econ Projects (QuantEcon Project)](https://github.com/QuantEcon/)
 - [University Departments (ScPo Department of Economics)](https://github.com/ScPoEcon)
@@ -104,57 +140,66 @@ Why?
 - [Econometric packages (FixEst Package)](https://github.com/lrberge/fixest)
 - [Individual economists (Victor Chernozhukov)](https://www.victorchernozhukov.com/code-and-notebooks)
 
+---
+# Why use version control?
 
-# Why use version control 
-
-## 
 Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_revised2_revised.txt?
+  
+<div align="center">
+<img src="http://phdcomics.com/comics/archive/phd101212s.gif" height=400>
+</div>
 
-<img data-src="phd101212s.png" height="520" width="800" />
+'Piled Higher and Deeper' by Jorge Cham www.phdcomics.com
 
-  - 'Piled Higher and Deeper' by Jorge Cham www.phdcomics.com
+---
 
-##
+- Keep track of changes to text files line-by-line over time
+- Keep track of what you changed between different versions
+- Branching and merging: Experiment safely; integrate when done
+- Revert any change if needed
+- Back up and distribute copies of files
+- Co-authored research is common: Version control allows easier tracking of collaboration and changes
+- Work offline and asynchronously
+- Collaborate remotely, centralized,  in real time
 
- - Keep track of changes to text files line-by-line over time
- - Keep track of what you changed between different versions
- - Branching and merging: Experiment safely; integrate when done
- - Revert any change if needed
- - Back up and distribute copies of files
- - Co-authored research is common: Version control allows easier tracking of collaboration and changes
-    - Work offline and asynchronously
-    - Collaborate remotely, centralized,  in real time
- 
-
-## Reproducability 
+---
+# Reproducability 
 
 - Many journals require data & code with submissions
 - Proper version control makes reproducing results easier
 - Github offers tools for code testing and code deployment 
 
- 
-## Teaching 
+
+---
+# Teaching 
 
 - Using github to teach encourages students to use git and github themselves --> important industry skill
 - Allows to update and test new teaching material before 
 - Easier to upload and distribute new teaching material (when using Github)
 
+---
+class: inverse, center, middle
+name: learning
 
-# Learning git 
+# Learning Git(Hub)
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
 
-## Git concepts 
 
- - **repository(repo)**: a collection of files and their history
- - **commit**: a snapshot of your files at a given time
- - **Staging area**: where you list files that will go into your next commit
- - **(local) Repository**: where the commits are stored; ie, it contains thef ull history of previous versions of the files in the repository, and relevant metadata
- - **(remote) Repository**: a version of the repository hosted elsewhere
- - **gitignore**: a file that declares what should **NOT** be tracked
- - **Main (or Master)**: Main version of the code
- - **Branches**: sequence of commits which can trace *alternative* history and versions of your code in the repo 
- - *HEAD*: pointer to branch ("Where your next commit would go")
+---
+# Git concepts 
 
-## Basic git commands 
+- **repository(repo)**: a collection of files and their history
+- **commit**: a snapshot of your files at a given time
+- **Staging area**: where you list files that will go into your next commit
+- **(local) Repository**: where the commits are stored; ie, it contains thef ull history of previous versions of the files in the repository, and relevant metadata
+- **(remote) Repository**: a version of the repository hosted elsewhere
+- **gitignore**: a file that declares what should **NOT** be tracked
+- **Main (or Master)**: Main version of the code
+- **Branches**: sequence of commits which can trace *alternative* history and versions of your code in the repo 
+- **HEAD**: pointer to branch ("Where your next commit would go")
+
+---
+# Basic Git commands 
 
 - **git init**: start a new repository in the working directory
 - **git status**: query the state of your director
@@ -168,58 +213,59 @@ Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_r
 - **git pull (git fetch; git merge)**: get last changes from a remote 
 - **git clone**: create local copy of public source project
 
+---
+# Setup 
 
-## Setup 
-
-- [Download git](https://git-scm.com/downloads)
+- Download [git](https://git-scm.com/downloads)
 - Install and if necessary set path
 - Terminal editor
- - Various shell addons for various terminals
+- Various shell addons for various terminals
 - Configure your name and & email 
 
-```git
+
+```bash
 git config --global user.name "Your name"
 git config --global user.email "your@email.com"
 ```
 
 Tips: 
-```git
+  ```bash
 git config --global core.editor "code --wait" # sets VS code as core editor
 git config --global -e
 ```
 
 Possible trap: 
-```git
+  ```bash
 git config --global core.autocrlf true # Windows
 git config --global core.autocrlf input # OSX
 ```
 
+---
+# Collaborate with others: 
+  
+  - Create Github account 
 
-
-## 
-Collaborate with others: 
-
-- Create Github account 
-
-## GUI 
+---
+# Graphical User Interfaces (GUIs)
 
 - RStudio
 - VSCode 
-  - Gitlens 
+- Gitlens 
 - Gitkraken
 
-# Git Workflows 
+---
+# Basic Workflow 
 
-## Basic Workflow 
-
-- 1. Create an empty folder
-- 2. Init repository (**git init**) 
-- 3. Add files & annotate them 
-- 4. Add the files to the staging area (**git add**)
-- 5. Commit the files (**git commit**)
+1. Create an empty folder
+2. Init repository (**git init**) 
+3. Add files & annotate them 
+4. Add the files to the staging area (**git add**)
+5. Commit the files (**git commit**)
 
 
-## Personal remote workflow 
+
+---
+# Personal remote workflow (Option 1)
 
 - Steps 1-5
 - Create an *empty* repo on github 
@@ -229,7 +275,41 @@ Collaborate with others:
 - If the working tree is not *clean* before pulling from remote, repeat steps 4-5
 - Pull from the remote to the local repo 
 
-## Collaborating workflow 
+Pros: 
+ - Decide when to push to Github
+ - Language specific project Environments (Julia Environments)
+ 
+Cons: 
+ - Not a good workflow for non-empty remotes
+ - In case of non language environment -> no README.md, no liscence, no .gitignore 
+
+---
+# Personal remote workflow (Option 2)
+
+- Create a new repo on github
+   - Add README.md, .gitignore and liscene. Can also add collaborators
+- Clone 
+- Work on your local repo
+- Push from the local to the remote repo 
+
+Pros: 
+ - Creating the repo on GitHub first means that it will always be "upstream" of your (and any other) local copies
+  - In effect, this allows GitHub to act as the central node in the distributed VC network
+  - Especially valuable when you are collaborating on a project with others
+
+Cons: 
+ - Not every project goes on Github
+ - Certain local projects *might* collide with Github created repos
+
+---
+# Working with remotes tips 
+
+- Always pull from the upstream repo *before* you push any changes 
+- `git fecht, git merge` is better than `git pull` if you suspect merge conflicts
+- Do **NOT** `git rebase` public open source repos
+
+---
+# Collaborating workflow 
 
 - Step 1
 - Fork a public repo 
@@ -240,8 +320,29 @@ Collaborate with others:
 - Create a pull request
 - Review process of pull request 
 
+---
+class: inverse, center, middle
+name: live
 
-# Live tutorial 
+# Live tutorial
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+<div align="center">
+<img src="https://i.kym-cdn.com/photos/images/original/000/000/130/disaster-girl.jpg" height=400>
+</div>
 
 
-# Conlusions 
+---
+# Further tips
+
+- Master the shell
+- git with r: Jenny Bryan's amazing [guide](http://happygitwithr.com)
+
+---
+class: inverse, center, middle
+name: questions
+
+# Questions
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+

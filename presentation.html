@@ -1,783 +1,470 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="author" content="Heili Hein &amp; Nicolas Reigl" />
-  <title>Git for economist</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="presentation_files/reveal.js-3.3.0.1/css/reveal.css"/>
+<html lang="" xml:lang="">
+  <head>
+    <title>Git for economist</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Heili Hein &amp; Nicolas Reigl" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Git for economist
+### Heili Hein &amp; Nicolas Reigl
+### TalTech / Eesti Pank|
+
+---
 
 
 
-<link rel="stylesheet" href="presentation_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
 
 
-  <!-- some tweaks to reveal css -->
-  <style type="text/css">
-    .reveal h1 { font-size: 2.0em; }
-    .reveal h2 { font-size: 1.5em;  }
-    .reveal h3 { font-size: 1.25em;	}
-    .reveal h4 { font-size: 1em;	}
 
-    .reveal .slides>section,
-    .reveal .slides>section>section {
-      padding: 0px 0px;
+class: inverse, center, middle
+name: prologue
+
+# Prologue
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+---
+# To do
+
+- Add credits 
+- Figure of standard workflows 
+- Improve "Learning git steps"
+- Date in the YAML: Heili, why does the date bug out?
+
+
+---
+# Outreach
+
+- We all have some skills we can share
+
+
+Disclaimer
+
+- Not related to Eesti Pank/ Taltech
+- We are not computer science experts 
+- content is based on our limited CS background and programming experience 
+- Opinionated views on workflows and best practices 
+
+
+---
+# Intro
+
+Plan for today 
+
+- Short &amp; low level introduction to git &amp; github focused on what might be useful for economists
+- Concepts
+- Live-tutorial
+
+
+
+---
+# Resources 
+
+Best in class:
+
+- [Git docs](https://git-scm.com/doc)
+- [Atlasian git tutorial](https://www.atlassian.com/git/tutorials) 
+- [Software Carpentry git tutorial](https://swcarpentry.github.io/git-novice/)
+- [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
+- [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
+- [Flight rules for Git](https://github.com/k88hudson/git-flight-rules/blob/master/README.md)
+
+
+---
+# What is git? 
+
+Git is officially defined as a *distributed version control system* (VCS)
+
+- A system that tracks changes to our project files over time
+- record project changes and go back to specific versions of tracked files, at any given point in time 
+- system can be used by many people to collaborate efficiently
+- each developer can have their own version of the project, distributed on their computer
+- later the individual versions of the project can be merged and adapted to the main version of the project
+
+---
+# What is github? 
+
+- [Github](github.com) is an online platform built for collaborative software development that uses the git protocol
+- Github provides free unlimited private repos 
+- Paid subscriptions for a wide range of services
+
+
+Alternatives 
+
+- [Gitlab](https://about.gitlab.com)
+- Host your private git server
+
+
+---
+# Why learn git (as an economist)? 
+
+&gt; The master-economist must possess a rare combination of gifts .... He must be mathematician, historian, statesman, philosopher—in some degree....
+
+John Maynard Keynes
+
+Economists today: 
+  
+- Statistical programming 
+- DevTools 
+- Collaborate (interdisciplinary)
+
+
+---
+# Economists work with code 
+
+but it seems we are not adopting many important tools from the experts on code
+
+Why? 
+  
+- Learning new things is costly 
+- Rethink our workflows 
+- Its simply not thought! 
+
+
+---
+# Who uses Git? 
+  
+- [Instituations (NY FED)](https://github.com/FRBNY-DSGE)
+- [Econ Projects (QuantEcon Project)](https://github.com/QuantEcon/)
+- [University Departments (ScPo Department of Economics)](https://github.com/ScPoEcon)
+- [Econ software platforms (Dynare)](https://git.dynare.org/Dynare)
+- [Econometric packages (FixEst Package)](https://github.com/lrberge/fixest)
+- [Individual economists (Victor Chernozhukov)](https://www.victorchernozhukov.com/code-and-notebooks)
+
+---
+# Why use version control?
+
+Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_revised2_revised.txt?
+  
+&lt;div align="center"&gt;
+&lt;img src="http://phdcomics.com/comics/archive/phd101212s.gif" height=400&gt;
+&lt;/div&gt;
+
+'Piled Higher and Deeper' by Jorge Cham www.phdcomics.com
+
+---
+
+- Keep track of changes to text files line-by-line over time
+- Keep track of what you changed between different versions
+- Branching and merging: Experiment safely; integrate when done
+- Revert any change if needed
+- Back up and distribute copies of files
+- Co-authored research is common: Version control allows easier tracking of collaboration and changes
+- Work offline and asynchronously
+- Collaborate remotely, centralized,  in real time
+
+---
+# Reproducability 
+
+- Many journals require data &amp; code with submissions
+- Proper version control makes reproducing results easier
+- Github offers tools for code testing and code deployment 
+
+
+---
+# Teaching 
+
+- Using github to teach encourages students to use git and github themselves --&gt; important industry skill
+- Allows to update and test new teaching material before 
+- Easier to upload and distribute new teaching material (when using Github)
+
+---
+class: inverse, center, middle
+name: learning
+
+# Learning Git(Hub)
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+
+---
+# Git concepts 
+
+- **repository(repo)**: a collection of files and their history
+- **commit**: a snapshot of your files at a given time
+- **Staging area**: where you list files that will go into your next commit
+- **(local) Repository**: where the commits are stored; ie, it contains thef ull history of previous versions of the files in the repository, and relevant metadata
+- **(remote) Repository**: a version of the repository hosted elsewhere
+- **gitignore**: a file that declares what should **NOT** be tracked
+- **Main (or Master)**: Main version of the code
+- **Branches**: sequence of commits which can trace *alternative* history and versions of your code in the repo 
+- **HEAD**: pointer to branch ("Where your next commit would go")
+
+---
+# Basic Git commands 
+
+- **git init**: start a new repository in the working directory
+- **git status**: query the state of your director
+- **git add**: add new or modified files to the staging area
+- **git commit**: commit changes in the index 
+- **git branch**: create  or list branch
+- **git checkout**: switch branch
+- **git diff**: show what changed wrt. the last commit or index
+- **git log**: show the commit history
+- **git push**: send your local changes to a remote server
+- **git pull (git fetch; git merge)**: get last changes from a remote 
+- **git clone**: create local copy of public source project
+
+---
+# Setup 
+
+- Download [git](https://git-scm.com/downloads)
+- Install and if necessary set path
+- Terminal editor
+- Various shell addons for various terminals
+- Configure your name and &amp; email 
+
+
+```bash
+git config --global user.name "Your name"
+git config --global user.email "your@email.com"
+```
+
+Tips: 
+  ```bash
+git config --global core.editor "code --wait" # sets VS code as core editor
+git config --global -e
+```
+
+Possible trap: 
+  ```bash
+git config --global core.autocrlf true # Windows
+git config --global core.autocrlf input # OSX
+```
+
+---
+# Collaborate with others: 
+  
+  - Create Github account 
+
+---
+# Graphical User Interfaces (GUIs)
+
+- RStudio
+- VSCode 
+- Gitlens 
+- Gitkraken
+
+---
+# Basic Workflow 
+
+1. Create an empty folder
+2. Init repository (**git init**) 
+3. Add files &amp; annotate them 
+4. Add the files to the staging area (**git add**)
+5. Commit the files (**git commit**)
+
+
+
+---
+# Personal remote workflow (Option 1)
+
+- Steps 1-5
+- Create an *empty* repo on github 
+- Link the github remote to your local repo
+- Push from the local repo to the remote
+- After working on the local repo, repeat steps 4-5
+- If the working tree is not *clean* before pulling from remote, repeat steps 4-5
+- Pull from the remote to the local repo 
+
+Pros: 
+ - Decide when to push to Github
+ - Language specific project Environments (Julia Environments)
+ 
+Cons: 
+ - Not a good workflow for non-empty remotes
+ - In case of non language environment -&gt; no README.md, no liscence, no .gitignore 
+
+---
+# Personal remote workflow (Option 2)
+
+- Create a new repo on github
+   - Add README.md, .gitignore and liscene. Can also add collaborators
+- Clone 
+- Work on your local repo
+- Push from the local to the remote repo 
+
+Pros: 
+ - Creating the repo on GitHub first means that it will always be "upstream" of your (and any other) local copies
+  - In effect, this allows GitHub to act as the central node in the distributed VC network
+  - Especially valuable when you are collaborating on a project with others
+
+Cons: 
+ - Not every project goes on Github
+ - Certain local projects *might* collide with Github created repos
+
+---
+# Working with remotes tips 
+
+- Always pull from the upstream repo *before* you push any changes 
+- `git fecht, git merge` is better than `git pull` if you suspect merge conflicts
+- Do **NOT** `git rebase` public open source repos
+
+---
+# Collaborating workflow 
+
+- Step 1
+- Fork a public repo 
+- Clone the *forked* repo to local empty folder
+- (*Optional: create a dev branch*)
+- Work on the forked repo (*main or dev and then merge back to main*)
+- Push back to the personal fork
+- Create a pull request
+- Review process of pull request 
+
+---
+class: inverse, center, middle
+name: live
+
+# Live tutorial
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+&lt;div align="center"&gt;
+&lt;img src="https://i.kym-cdn.com/photos/images/original/000/000/130/disaster-girl.jpg" height=400&gt;
+&lt;/div&gt;
+
+
+---
+# Further tips
+
+- Master the shell
+- git with r: Jenny Bryan's amazing [guide](http://happygitwithr.com)
+
+---
+class: inverse, center, middle
+name: questions
+
+# Questions
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
     }
-
-
-
-    .reveal table {
-      border-width: 1px;
-      border-spacing: 2px;
-      border-style: dotted;
-      border-color: gray;
-      border-collapse: collapse;
-      font-size: 0.7em;
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
     }
-
-    .reveal table th {
-      border-width: 1px;
-      padding-left: 10px;
-      padding-right: 25px;
-      font-weight: bold;
-      border-style: dotted;
-      border-color: gray;
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
     }
-
-    .reveal table td {
-      border-width: 1px;
-      padding-left: 10px;
-      padding-right: 25px;
-      border-style: dotted;
-      border-color: gray;
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
     }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
 
-
-  </style>
-
-    <style type="text/css">code{white-space: pre;}</style>
-
-    <link rel="stylesheet" href="styles.css"/>
-
-<!-- Printing and PDF exports -->
-<script id="paper-css" type="application/dynamic-css">
-
-/* Default Print Stylesheet Template
-   by Rob Glazebrook of CSSnewbie.com
-   Last Updated: June 4, 2008
-
-   Feel free (nay, compelled) to edit, append, and
-   manipulate this file as you see fit. */
-
-
-@media print {
-
-	/* SECTION 1: Set default width, margin, float, and
-	   background. This prevents elements from extending
-	   beyond the edge of the printed page, and prevents
-	   unnecessary background images from printing */
-	html {
-		background: #fff;
-		width: auto;
-		height: auto;
-		overflow: visible;
-	}
-	body {
-		background: #fff;
-		font-size: 20pt;
-		width: auto;
-		height: auto;
-		border: 0;
-		margin: 0 5%;
-		padding: 0;
-		overflow: visible;
-		float: none !important;
-	}
-
-	/* SECTION 2: Remove any elements not needed in print.
-	   This would include navigation, ads, sidebars, etc. */
-	.nestedarrow,
-	.controls,
-	.fork-reveal,
-	.share-reveal,
-	.state-background,
-	.reveal .progress,
-	.reveal .backgrounds {
-		display: none !important;
-	}
-
-	/* SECTION 3: Set body font face, size, and color.
-	   Consider using a serif font for readability. */
-	body, p, td, li, div {
-		font-size: 20pt!important;
-		font-family: Georgia, "Times New Roman", Times, serif !important;
-		color: #000;
-	}
-
-	/* SECTION 4: Set heading font face, sizes, and color.
-	   Differentiate your headings from your body text.
-	   Perhaps use a large sans-serif for distinction. */
-	h1,h2,h3,h4,h5,h6 {
-		color: #000!important;
-		height: auto;
-		line-height: normal;
-		font-family: Georgia, "Times New Roman", Times, serif !important;
-		text-shadow: 0 0 0 #000 !important;
-		text-align: left;
-		letter-spacing: normal;
-	}
-	/* Need to reduce the size of the fonts for printing */
-	h1 { font-size: 28pt !important;  }
-	h2 { font-size: 24pt !important; }
-	h3 { font-size: 22pt !important; }
-	h4 { font-size: 22pt !important; font-variant: small-caps; }
-	h5 { font-size: 21pt !important; }
-	h6 { font-size: 20pt !important; font-style: italic; }
-
-	/* SECTION 5: Make hyperlinks more usable.
-	   Ensure links are underlined, and consider appending
-	   the URL to the end of the link for usability. */
-	a:link,
-	a:visited {
-		color: #000 !important;
-		font-weight: bold;
-		text-decoration: underline;
-	}
-	/*
-	.reveal a:link:after,
-	.reveal a:visited:after {
-		content: " (" attr(href) ") ";
-		color: #222 !important;
-		font-size: 90%;
-	}
-	*/
-
-
-	/* SECTION 6: more reveal.js specific additions by @skypanther */
-	ul, ol, div, p {
-		visibility: visible;
-		position: static;
-		width: auto;
-		height: auto;
-		display: block;
-		overflow: visible;
-		margin: 0;
-		text-align: left !important;
-	}
-	.reveal pre,
-	.reveal table {
-		margin-left: 0;
-		margin-right: 0;
-	}
-	.reveal pre code {
-		padding: 20px;
-		border: 1px solid #ddd;
-	}
-	.reveal blockquote {
-		margin: 20px 0;
-	}
-	.reveal .slides {
-		position: static !important;
-		width: auto !important;
-		height: auto !important;
-
-		left: 0 !important;
-		top: 0 !important;
-		margin-left: 0 !important;
-		margin-top: 0 !important;
-		padding: 0 !important;
-		zoom: 1 !important;
-
-		overflow: visible !important;
-		display: block !important;
-
-		text-align: left !important;
-		-webkit-perspective: none;
-		   -moz-perspective: none;
-		    -ms-perspective: none;
-		        perspective: none;
-
-		-webkit-perspective-origin: 50% 50%;
-		   -moz-perspective-origin: 50% 50%;
-		    -ms-perspective-origin: 50% 50%;
-		        perspective-origin: 50% 50%;
-	}
-	.reveal .slides section {
-		visibility: visible !important;
-		position: static !important;
-		width: auto !important;
-		height: auto !important;
-		display: block !important;
-		overflow: visible !important;
-
-		left: 0 !important;
-		top: 0 !important;
-		margin-left: 0 !important;
-		margin-top: 0 !important;
-		padding: 60px 20px !important;
-		z-index: auto !important;
-
-		opacity: 1 !important;
-
-		page-break-after: always !important;
-
-		-webkit-transform-style: flat !important;
-		   -moz-transform-style: flat !important;
-		    -ms-transform-style: flat !important;
-		        transform-style: flat !important;
-
-		-webkit-transform: none !important;
-		   -moz-transform: none !important;
-		    -ms-transform: none !important;
-		        transform: none !important;
-
-		-webkit-transition: none !important;
-		   -moz-transition: none !important;
-		    -ms-transition: none !important;
-		        transition: none !important;
-	}
-	.reveal .slides section.stack {
-		padding: 0 !important;
-	}
-	.reveal section:last-of-type {
-		page-break-after: avoid !important;
-	}
-	.reveal section .fragment {
-		opacity: 1 !important;
-		visibility: visible !important;
-
-		-webkit-transform: none !important;
-		   -moz-transform: none !important;
-		    -ms-transform: none !important;
-		        transform: none !important;
-	}
-	.reveal section img {
-		display: block;
-		margin: 15px 0px;
-		background: rgba(255,255,255,1);
-		border: 1px solid #666;
-		box-shadow: none;
-	}
-
-	.reveal section small {
-		font-size: 0.8em;
-	}
-
-}  
-</script>
-
-
-<script id="pdf-css" type="application/dynamic-css">
-    
-/**
- * This stylesheet is used to print reveal.js
- * presentations to PDF.
- *
- * https://github.com/hakimel/reveal.js#pdf-export
- */
-
-* {
-	-webkit-print-color-adjust: exact;
-}
-
-body {
-	margin: 0 auto !important;
-	border: 0;
-	padding: 0;
-	float: none !important;
-	overflow: visible;
-}
-
-html {
-	width: 100%;
-	height: 100%;
-	overflow: visible;
-}
-
-/* Remove any elements not needed in print. */
-.nestedarrow,
-.reveal .controls,
-.reveal .progress,
-.reveal .playback,
-.reveal.overview,
-.fork-reveal,
-.share-reveal,
-.state-background {
-	display: none !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	text-shadow: 0 0 0 #000 !important;
-}
-
-.reveal pre code {
-	overflow: hidden !important;
-	font-family: Courier, 'Courier New', monospace !important;
-}
-
-ul, ol, div, p {
-	visibility: visible;
-	position: static;
-	width: auto;
-	height: auto;
-	display: block;
-	overflow: visible;
-	margin: auto;
-}
-.reveal {
-	width: auto !important;
-	height: auto !important;
-	overflow: hidden !important;
-}
-.reveal .slides {
-	position: static;
-	width: 100%;
-	height: auto;
-
-	left: auto;
-	top: auto;
-	margin: 0 !important;
-	padding: 0 !important;
-
-	overflow: visible;
-	display: block;
-
-	-webkit-perspective: none;
-	   -moz-perspective: none;
-	    -ms-perspective: none;
-	        perspective: none;
-
-	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
-	   -moz-perspective-origin: 50% 50%;
-	    -ms-perspective-origin: 50% 50%;
-	        perspective-origin: 50% 50%;
-}
-
-.reveal .slides section {
-	page-break-after: always !important;
-
-	visibility: visible !important;
-	position: relative !important;
-	display: block !important;
-	position: relative !important;
-
-	margin: 0 !important;
-	padding: 0 !important;
-	box-sizing: border-box !important;
-	min-height: 1px;
-
-	opacity: 1 !important;
-
-	-webkit-transform-style: flat !important;
-	   -moz-transform-style: flat !important;
-	    -ms-transform-style: flat !important;
-	        transform-style: flat !important;
-
-	-webkit-transform: none !important;
-	   -moz-transform: none !important;
-	    -ms-transform: none !important;
-	        transform: none !important;
-}
-
-.reveal section.stack {
-	margin: 0 !important;
-	padding: 0 !important;
-	page-break-after: avoid !important;
-	height: auto !important;
-	min-height: auto !important;
-}
-
-.reveal img {
-	box-shadow: none;
-}
-
-.reveal .roll {
-	overflow: visible;
-	line-height: 1em;
-}
-
-/* Slide backgrounds are placed inside of their slide when exporting to PDF */
-.reveal section .slide-background {
-	display: block !important;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: -1;
-}
-
-/* All elements should be above the slide-background */
-.reveal section>* {
-	position: relative;
-	z-index: 1;
-}
-
-/* Display slide speaker notes when 'showNotes' is enabled */
-.reveal .speaker-notes-pdf {
-	display: block;
-	width: 100%;
-	max-height: none;
-	left: auto;
-	top: auto;
-	z-index: 100;
-}
-
-/* Display slide numbers when 'slideNumber' is enabled */
-.reveal .slide-number-pdf {
-	display: block;
-	position: absolute;
-	font-size: 14px;
-}
-
-</script>
-
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
-var style = document.createElement( 'style' );
-style.type = 'text/css';
-var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
-var style_script = document.getElementById(style_script_id).text;
-style.innerHTML = style_script;
-document.getElementsByTagName('head')[0].appendChild(style);
-</script>
-
-    <script src="presentation_files/header-attrs-2.6/header-attrs.js"></script>
-</head>
-<body>
-  <div class="reveal">
-    <div class="slides">
-
-<section>
-    <h1 class="title">Git for economist</h1>
-    <h2 class="author">Heili Hein &amp; Nicolas Reigl</h2>
-    <h3 class="date">29-12-2020</h3>
-</section>
-
-<section>
-<section id="intro" class="title-slide slide level1">
-<h1>Intro</h1>
-<ul>
-<li>Outreach:
-<ul>
-<li>We all have some skills we can share</li>
-</ul></li>
-</ul>
-</section>
-<section id="plan-for-today" class="slide level2">
-<h2>Plan for today</h2>
-<ul>
-<li>Short &amp; low level introduction to git &amp; github focused on what might be useful for economists</li>
-<li>Concepts</li>
-<li>Live-tutorial</li>
-<li>Hands on?</li>
-</ul>
-</section>
-<section id="disclaimer" class="slide level2">
-<h2>Disclaimer</h2>
-<ul>
-<li>Not related to Eesti Pank/ Taltech</li>
-<li>We are not computer science experts
-<ul>
-<li>content is based on our limited CS background and programming experience</li>
-</ul></li>
-<li>Opinionated views on workflows and best practices</li>
-</ul>
-</section>
-<section id="resources" class="slide level2">
-<h2>Resources</h2>
-<ul>
-<li><a href="https://git-scm.com/doc">Git docs</a></li>
-<li><a href="https://www.atlassian.com/git/tutorials">Atlasian git tutorial</a></li>
-<li><a href="https://swcarpentry.github.io/git-novice/">Software Carpentry git tutorial</a></li>
-<li><a href="https://julia.quantecon.org/more_julia/version_control.html">QuantEcon git tutorial</a></li>
-<li><a href="https://github.com/k88hudson/git-flight-rules/blob/master/README.md">Flight rules for Git</a></li>
-</ul>
-</section></section>
-<section>
-<section id="what-is-git" class="title-slide slide level1">
-<h1>What is git?</h1>
-<p>Git is officially defined as a <em>distributed version control system</em> (VCS)</p>
-<ul>
-<li>A system that tracks changes to our project files over time
-<ul>
-<li>record project changes and go back to specific versions of tracked files, at any given point in time</li>
-<li>system can be used by many people to collaborate efficiently
-<ul>
-<li>each developer can have their own version of the project, distributed on their computer</li>
-<li>later the individual versions of the project can be merged and adapted to the main version of the project</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="what-is-github" class="slide level2">
-<h2>What is github?</h2>
-<ul>
-<li>Github is an online platform built for collaborative software development that uses the git protocol</li>
-<li>Github provides free unlimited private repos</li>
-<li>Paid subscriptions for a wide range of services</li>
-</ul>
-<p>Alternatives</p>
-<ul>
-<li><a href="https://about.gitlab.com">Gitlab</a></li>
-<li>Host your private git server</li>
-</ul>
-</section></section>
-<section>
-<section id="why-learn-git-as-an-economist" class="title-slide slide level1">
-<h1>Why learn git (as an economist)?</h1>
-
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<blockquote>
-<p>The master-economist must possess a rare combination of gifts …. He must be mathematician, historian, statesman, philosopher—in some degree….</p>
-</blockquote>
-<p>John Maynard Keynes</p>
-<p>Economists today:</p>
-<ul>
-<li>Statistical programming</li>
-<li>DevTools</li>
-<li>Collaborate interdisciplinary</li>
-</ul>
-</section>
-<section id="economists-work-with-code" class="slide level2">
-<h2>Economists work with code</h2>
-<p>but it seems we are not adopting many important tools from the experts on code</p>
-<p>Why?</p>
-<ul>
-<li>Learning new things is costly</li>
-<li>Rethink our workflows</li>
-<li>Its simply not thought!</li>
-</ul>
-</section>
-<section id="who-uses-git" class="slide level2">
-<h2>Who uses Git?</h2>
-<ul>
-<li><a href="https://github.com/FRBNY-DSGE">Instituations (NY FED)</a></li>
-<li><a href="https://github.com/QuantEcon/">Econ Projects (QuantEcon Project)</a></li>
-<li><a href="https://github.com/ScPoEcon">University Departments (ScPo Department of Economics)</a></li>
-<li><a href="https://git.dynare.org/Dynare">Econ software platforms (Dynare)</a></li>
-<li><a href="https://github.com/lrberge/fixest">Econometric packages (FixEst Package)</a></li>
-<li><a href="https://www.victorchernozhukov.com/code-and-notebooks">Individual economists (Victor Chernozhukov)</a></li>
-</ul>
-</section></section>
-<section>
-<section id="why-use-version-control" class="title-slide slide level1">
-<h1>Why use version control</h1>
-
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<p>Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_revised2_revised.txt?</p>
-<p><img data-src="phd101212s.png" height="520" width="800" /></p>
-<ul>
-<li>‘Piled Higher and Deeper’ by Jorge Cham www.phdcomics.com</li>
-</ul>
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<ul>
-<li>Keep track of changes to text files line-by-line over time</li>
-<li>Keep track of what you changed between different versions</li>
-<li>Branching and merging: Experiment safely; integrate when done</li>
-<li>Revert any change if needed</li>
-<li>Back up and distribute copies of files</li>
-<li>Co-authored research is common: Version control allows easier tracking of collaboration and changes
-<ul>
-<li>Work offline and asynchronously</li>
-<li>Collaborate remotely, centralized, in real time</li>
-</ul></li>
-</ul>
-</section>
-<section id="reproducability" class="slide level2">
-<h2>Reproducability</h2>
-<ul>
-<li>Many journals require data &amp; code with submissions</li>
-<li>Proper version control makes reproducing results easier</li>
-<li>Github offers tools for code testing and code deployment</li>
-</ul>
-</section>
-<section id="teaching" class="slide level2">
-<h2>Teaching</h2>
-<ul>
-<li>Using github to teach encourages students to use git and github themselves –&gt; important industry skill</li>
-<li>Allows to update and test new teaching material before</li>
-<li>Easier to upload and distribute new teaching material (when using Github)</li>
-</ul>
-</section></section>
-<section>
-<section id="learning-git" class="title-slide slide level1">
-<h1>Learning git</h1>
-
-</section>
-<section id="git-concepts" class="slide level2">
-<h2>Git concepts</h2>
-<ul>
-<li><strong>repository(repo)</strong>: a collection of files and their history</li>
-<li><strong>commit</strong>: a snapshot of your files at a given time</li>
-<li><strong>Staging area</strong>: where you list files that will go into your next commit</li>
-<li><strong>(local) Repository</strong>: where the commits are stored; ie, it contains thef ull history of previous versions of the files in the repository, and relevant metadata</li>
-<li><strong>(remote) Repository</strong>: a version of the repository hosted elsewhere</li>
-<li><strong>gitignore</strong>: a file that declares what should <strong>NOT</strong> be tracked</li>
-<li><strong>Main (or Master)</strong>: Main version of the code</li>
-<li><strong>Branches</strong>: sequence of commits which can trace <em>alternative</em> history and versions of your code in the repo</li>
-<li><em>HEAD</em>: pointer to branch (“Where your next commit would go”)</li>
-</ul>
-</section>
-<section id="basic-git-commands" class="slide level2">
-<h2>Basic git commands</h2>
-<ul>
-<li><strong>git init</strong>: start a new repository in the working directory</li>
-<li><strong>git status</strong>: query the state of your director</li>
-<li><strong>git add</strong>: add new or modified files to the staging area</li>
-<li><strong>git commit</strong>: commit changes in the index</li>
-<li><strong>git branch</strong>: create or list branch</li>
-<li><strong>git checkout</strong>: switch branch</li>
-<li><strong>git diff</strong>: show what changed wrt. the last commit or index</li>
-<li><strong>git log</strong>: show the commit history</li>
-<li><strong>git push</strong>: send your local changes to a remote server</li>
-<li><strong>git pull (git fetch; git merge)</strong>: get last changes from a remote</li>
-<li><strong>git clone</strong>: create local copy of public source project</li>
-</ul>
-</section>
-<section id="setup" class="slide level2">
-<h2>Setup</h2>
-<ul>
-<li><a href="https://git-scm.com/downloads">Download git</a></li>
-<li>Install and if necessary set path</li>
-<li>Terminal editor</li>
-<li>Various shell addons for various terminals</li>
-<li>Configure your name and &amp; email</li>
-</ul>
-<pre class="git"><code>git config --global user.name &quot;Your name&quot;
-git config --global user.email &quot;your@email.com&quot;</code></pre>
-<p>Tips:</p>
-<pre class="git"><code>git config --global core.editor &quot;code --wait&quot; # sets VS code as core editor
-git config --global -e</code></pre>
-<p>Possible trap:</p>
-<pre class="git"><code>git config --global core.autocrlf true # Windows
-git config --global core.autocrlf input # OSX</code></pre>
-</section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-<p>Collaborate with others:</p>
-<ul>
-<li>Create Github account</li>
-</ul>
-</section>
-<section id="gui" class="slide level2">
-<h2>GUI</h2>
-<ul>
-<li>RStudio</li>
-<li>VSCode
-<ul>
-<li>Gitlens</li>
-</ul></li>
-<li>Gitkraken</li>
-</ul>
-</section></section>
-<section>
-<section id="git-workflows" class="title-slide slide level1">
-<h1>Git Workflows</h1>
-
-</section>
-<section id="basic-workflow" class="slide level2">
-<h2>Basic Workflow</h2>
-<ul>
-<li><ol type="1">
-<li>Create an empty folder</li>
-</ol></li>
-<li><ol start="2" type="1">
-<li>Init repository (<strong>git init</strong>)</li>
-</ol></li>
-<li><ol start="3" type="1">
-<li>Add files &amp; annotate them</li>
-</ol></li>
-<li><ol start="4" type="1">
-<li>Add the files to the staging area (<strong>git add</strong>)</li>
-</ol></li>
-<li><ol start="5" type="1">
-<li>Commit the files (<strong>git commit</strong>)</li>
-</ol></li>
-</ul>
-</section>
-<section id="personal-remote-workflow" class="slide level2">
-<h2>Personal remote workflow</h2>
-<ul>
-<li>Steps 1-5</li>
-<li>Create an <em>empty</em> repo on github</li>
-<li>Link the github remote with your local repo</li>
-<li>Push from the local repo to the remote</li>
-<li>After working on the local repo, repeat steps 4-5</li>
-<li>If the working tree is not <em>clean</em> before pulling from remote, repeat steps 4-5</li>
-<li>Pull from the remote to the local repo</li>
-</ul>
-</section>
-<section id="collaborating-workflow" class="slide level2">
-<h2>Collaborating workflow</h2>
-<ul>
-<li>Step 1</li>
-<li>Fork a public repo</li>
-<li>Clone the <em>forked</em> repo to local empty folder</li>
-<li>(<em>Optional: create a dev branch</em>)</li>
-<li>Work on the forked repo (<em>main or dev and then merge back to main</em>)</li>
-<li>Push back to the personal fork</li>
-<li>Create a pull request</li>
-<li>Review process of pull request</li>
-</ul>
-</section></section>
-<section id="live-tutorial" class="title-slide slide level1">
-<h1>Live tutorial</h1>
-
-</section>
-
-<section id="conlusions" class="title-slide slide level1">
-<h1>Conlusions</h1>
-
-</section>
-    </div>
-  </div>
-
-  <script src="presentation_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
-  <script src="presentation_files/reveal.js-3.3.0.1/js/reveal.js"></script>
-
-  <script>
-
-      // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        // Push each slide change to the browser history
-        history: true,
-        // Vertical centering of slides
-        center: false,
-        // Transition style
-        transition: 'default', // none/fade/slide/convex/concave/zoom
-        // Transition style for full page slide backgrounds
-        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
-
-
-
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'presentation_files/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
-        ]
-      });
-    </script>
-
-<script>
-  (function() {
-    if (window.jQuery) {
-      Reveal.addEventListener( 'slidechanged', function(event) {  
-        window.jQuery(event.previousSlide).trigger('hidden');
-        window.jQuery(event.currentSlide).trigger('shown');
-      });
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
     }
-  })();
+    i++;
+  }
+};
+slideshow._releaseMath(document);
 </script>
-
-
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
   </body>
 </html>
