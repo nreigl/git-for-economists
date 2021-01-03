@@ -36,7 +36,7 @@ name: prologue
 # To do
 
 - Add credits 
-- Figure of standard workflows 
+- Add merge conflicts part
 - Improve "Learning git steps"
 - Date in the YAML: Heili, why does the date bug out?
 
@@ -45,7 +45,6 @@ name: prologue
 # Outreach
 
 - We all have some skills we can share
-
 
 Disclaimer
 
@@ -60,10 +59,9 @@ Disclaimer
 
 Plan for today 
 
-- Short & low level introduction to git & github focused on what might be useful for economists
+- Short & low level introduction to Git & Github focused on what might be useful for economists
 - Concepts
 - Live-tutorial
-
 
 
 ---
@@ -80,7 +78,7 @@ Best in class:
 
 
 ---
-# What is git? 
+# What is Git? 
 
 Git is officially defined as a *distributed version control system* (VCS)
 
@@ -91,9 +89,10 @@ Git is officially defined as a *distributed version control system* (VCS)
 - later the individual versions of the project can be merged and adapted to the main version of the project
 
 ---
-# What is github? 
+# What is Github? 
 
 - [Github](github.com) is an online platform built for collaborative software development that uses the git protocol
+- Git and Github are distinct things
 - Github provides free unlimited private repos 
 - Paid subscriptions for a wide range of services
 
@@ -101,6 +100,7 @@ Git is officially defined as a *distributed version control system* (VCS)
 Alternatives 
 
 - [Gitlab](https://about.gitlab.com)
+- [Bitbucket](https://bitbucket.org/product)
 - Host your private git server
 
 
@@ -115,7 +115,7 @@ Economists today:
   
 - Statistical programming 
 - DevTools 
-- Collaborate (interdisciplinary)
+- Collaborate (interdisciplinary) (on open source projects)
 
 
 ---
@@ -141,7 +141,7 @@ Why?
 - [Individual economists (Victor Chernozhukov)](https://www.victorchernozhukov.com/code-and-notebooks)
 
 ---
-# Why use version control?
+# Why use version control (VC)?
 
 Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_revised2_revised.txt?
   
@@ -152,23 +152,47 @@ Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_r
 'Piled Higher and Deeper' by Jorge Cham www.phdcomics.com
 
 ---
+# VC with git
 
-- Keep track of changes to text files line-by-line over time
-- Keep track of what you changed between different versions
-- Branching and merging: Experiment safely; integrate when done
-- Revert any change if needed
-- Back up and distribute copies of files
-- Co-authored research is common: Version control allows easier tracking of collaboration and changes
-- Work offline and asynchronously
-- Collaborate remotely, centralized,  in real time
+  - Keep track of changes to text files line-by-line over time
+  - Keep track of what you changed between different versions
+  - Branching and merging: Experiment safely; integrate when done (robustness checks, revisions)
+  - Revert any change if needed
+  - Back up and distribute copies of files
+  - Co-authored research is common: Version control allows easier tracking of collaboration and changes
+  - Work offline and asynchronously
+  - Collaborate remotely, centralized,  in real time
+
+---
+# VC visualized - Changes  
+
+<div align="center">
+<img src="https://uidaholib.github.io/get-git/images/versions.png" height=400>
+</div>
+
+What is version control? https://uidaholib.github.io/get-git/1why.html
+
+
+---
+# VC visualized - Branches 
+
+<div align="center">
+<img src="https://uidaholib.github.io/get-git/images/branch-merge.png" height=400>
+</div>
+
+What is version control? https://uidaholib.github.io/get-git/1why.html
+
 
 ---
 # Reproducability 
 
 - Many journals require data & code with submissions
 - Proper version control makes reproducing results easier
-- Github offers tools for code testing and code deployment 
+ - DOI integration, off-the-shelf-licensing        
+- VC and open sourcing of your code operationalises the idea of open science and reproducability
 
+Not directly VC but good to know
+- Github offers tools for code testing and code deployment
 
 ---
 # Teaching 
@@ -176,6 +200,7 @@ Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_r
 - Using github to teach encourages students to use git and github themselves --> important industry skill
 - Allows to update and test new teaching material before 
 - Easier to upload and distribute new teaching material (when using Github)
+
 
 ---
 class: inverse, center, middle
@@ -243,7 +268,11 @@ git config --global core.autocrlf input # OSX
 ---
 # Collaborate with others: 
   
-  - Create Github account 
+  - Create Github account
+  - Star, clone, and fork other projects
+  - GitHub Issues are a great way to collaborate (and learn new things)
+    - Learn how to create Minimal Working Examples (MWE)
+
 
 ---
 # Graphical User Interfaces (GUIs)
@@ -252,6 +281,17 @@ git config --global core.autocrlf input # OSX
 - VSCode 
 - Gitlens 
 - Gitkraken
+
+---
+# Git workflows
+
+  
+<div align="center">
+<img src="https://miro.medium.com/max/577/1*AAU1VCV8LMHvVPBYxMBsxg.png" height=450>
+</div>
+
+A Review of Git Workflow Management https://medium.com/@hengfeng/a-review-of-git-workflow-management-7f9fbebd9370
+
 
 ---
 # Basic Workflow 
@@ -283,6 +323,8 @@ Cons:
  - Not a good workflow for non-empty remotes
  - In case of non language environment -> no README.md, no liscence, no .gitignore 
 
+Always pull from the upstream repo *before* you push any changes
+
 ---
 # Personal remote workflow (Option 2)
 
@@ -300,13 +342,23 @@ Pros:
 Cons: 
  - Not every project goes on Github
  - Certain local projects *might* collide with Github created repos
+ 
+ 
+ Always pull from the upstream repo *before* you push any changes 
 
 ---
 # Working with remotes tips 
 
-- Always pull from the upstream repo *before* you push any changes 
 - `git fecht, git merge` is better than `git pull` if you suspect merge conflicts
 - Do **NOT** `git rebase` public open source repos
+
+<div align="center">
+<img src="https://assets-global.website-files.com/5d7678efce0c5739c9bc3bf1/5dc320c753535c09450e4d76_git-rebase-2-example.png" height=400>
+</div>
+
+Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/regain-control-of-branches-with-git-rebase-onto
+
+
 
 ---
 # Collaborating workflow 
@@ -319,6 +371,18 @@ Cons:
 - Push back to the personal fork
 - Create a pull request
 - Review process of pull request 
+
+---
+# Workflow visualized
+
+<div align="center">
+<img src="https://uidaholib.github.io/get-git/images/workflow.png" height=400>
+</div>
+
+Workflow https://uidaholib.github.io/get-git/3workflow.html
+
+
+
 
 ---
 class: inverse, center, middle
@@ -335,7 +399,7 @@ name: live
 ---
 # Further tips
 
-- Master the shell
+- Master the [shell](https://github.com/uo-ec510-2020-spring/lectures/tree/master/03-shell)
 - git with r: Jenny Bryan's amazing [guide](http://happygitwithr.com)
 
 ---

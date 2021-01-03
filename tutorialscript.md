@@ -15,135 +15,139 @@ Target Thursday 20:30 for the tutorial
 Here we will show how to init a repo, show git status, git log, add files in the staging area and commit files. 
 
 make directory & cd into directory 
-```
+```bash
 mkdir git_tutorial
 cd git_tutorial
 ```
 
 Show that working tree is not VC 
-```
+```bash
 git status
 ```
 
 Initiate a repo 
-```
+```bash
 git init
 ```
 
 Show status 
-```
+```bash
 git status
 ```
 
 Cd into hidden folder and exit back
-```
+```bash
 cd .git/
 ..
 ```
 
 Create a new markdown document
-```
+```bash
 touch animals.md
 ```
 
 Show status 
-```
+```bash
 git status
 ```
 
 Add animals.md from the stating area
-```
+```bash
 git add animals.md
 ```
 
 Show status 
-```
+```bash
 git status
 ```
 
 
 Make a change in animals.md
-```
+```bash
 nvim animals.md
 ```
 
 Show status 
-```
+```bash
 git status
 ```
 
 Add animals.md from the stating area
-```
+```bash
+git add -u # Stage updated files
+git add . # Stage new files
 git add animals.md
 ```
 
+
+
 Commit 
-```
+```bash
 git commit -m"add animals.md"
 ```
 
 Show status 
-```
+```bash
 git status
 ```
 
 Show log 
-```
+```bash
 git log
 ```
 
 
 Add another file
-```
+```bash
 touch vegitables.md
 ```
 
 Show status 
-```
+```bash
 git status
 ```
 
 
 Add all files 
-```
+```bash
 git add -A
 ```
 
 Commit all files 
-```
+```bash
 git commit -m "add vegetables.md"
 ```
 
 Change in animals.md & and add vegetable
-```
+```bash
 nvim animal.md
 ```
 
 Git add all files
-```
+```bash
 git add -A
 ```
 
 Commit 
-```
+```bash
 git commit -m"make a mistake"
 ```
 
 ## 2. Revert back 
 
 Show the log and copy git hashkey 
-```
+```bash
 git log
 ```
 
 Checkout to previous version
-```
+```bash
 git checkout 
 ```
 
 
 Show status and show log 
-```
+```bash
 git status
 git log
 ```
@@ -154,45 +158,45 @@ git log
 Here we will show how to create a branch, switch a branch, diff branches and merge branches
 
 Look at available branches
-```
+```bash
 git branch
 ```
 
 Create a new branch called development
-```
+```bash
 git developtment
 ```
 
 Switch to development branch
-```
+```bash
 git checkout developtment
 ```
 
 Add a file fruits.md & add a fruit
-```
+```bash
 touch fruits.md
 nvim fruits.md
 ```
 
 Add and commit 
-```
+```bash
 git add -A
 git commit -m"add fruits.md"
 ```
 
 Switch back to master
-```
+```bash
 git checkout master
 ```
 
 Check difference between master and development
-```
+```bash
 git diff master developtment
 ```
 
 
 Merge master with development 
-```
+```bash
 git merge master development
 ```
 
@@ -209,7 +213,7 @@ Here we will show how to create a public repo on github, setup the repo, link th
 
 
 Show status 
-```
+```bash
 git status
 ```
 
@@ -224,7 +228,7 @@ The second command makes sure that you're on local main
 The third command pushes local main to remote main
 
 Show status 
-```
+```bash
 git status
 ```
 
@@ -232,12 +236,12 @@ git status
 Currently only the master branch is on github but what if I want to add a new development branch to 
 
 Create new local branch
-```
+```bash
 git checkout -b people
 ```
 
 Push branch people up to github
-```
+```bash
 git push -u origin people
 ```
 
@@ -249,12 +253,12 @@ Got back to github and create a README.md file
 
 
 Pull from the remote 
-```
+```bash
 git pull origin main
 ```
 
 Show status 
-```
+```bash
 git status
 ```
 
