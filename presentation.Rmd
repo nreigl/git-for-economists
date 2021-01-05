@@ -1,13 +1,13 @@
 ---
 title: "Git for economist"
 author: "Heili Hein & Nicolas Reigl"
-date: "TalTech / Eesti Pank|" # `r format(Sys.time(), '%d %B %Y')`
+date: "TalTech / Eesti Pank" # `r format(Sys.time(), '%d %B %Y')`
 output:
   xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts] 
+    css: [default, metropolis, metropolis-fonts]
     lib_dir: libs
     nature:
-      highlightStyle: github
+      highlightStyle: GitHub
       highlightLines: true
       countIncrementalSlides: false
 ---
@@ -16,7 +16,7 @@ output:
 options(htmltools.dir.version = FALSE)
 library(knitr)
 opts_chunk$set(
-  fig.align="center", #fig.width=6, fig.height=4.5, 
+  fig.align="center", #fig.width=6, fig.height=4.5,
   # out.width="748px", #out.length="520.75px",
   dpi=300, #fig.path='Figs/',
   cache=T#, echo=F, warning=F, message=F
@@ -35,10 +35,11 @@ name: prologue
 ---
 # To do
 
-- Add credits 
+- Add credits
 - Add merge conflicts part
 - Improve "Learning git steps"
 - Date in the YAML: Heili, why does the date bug out?
+- Git figure on title slide? Rewrite title logo .css in libs
 
 
 ---
@@ -49,55 +50,54 @@ name: prologue
 Disclaimer
 
 - Not related to Eesti Pank/ Taltech
-- We are not computer science experts 
-- content is based on our limited CS background and programming experience 
-- Opinionated views on workflows and best practices 
+- We are not computer science experts
+  - content is based on our limited CS background and programming experience
+- Opinionated views on workflows and best practices
 
 
 ---
 # Intro
 
-Plan for today 
+Plan for today
 
-- Short & low level introduction to Git & Github focused on what might be useful for economists
+- Short & low level introduction to Git & GitHub focused on what might be useful for economists
 - Concepts
 - Live-tutorial
 
 
 ---
-# Resources 
+# Resources
 
 Best in class:
 
 - [Git docs](https://git-scm.com/doc)
-- [Atlasian git tutorial](https://www.atlassian.com/git/tutorials) 
-- [Software Carpentry git tutorial](https://swcarpentry.github.io/git-novice/)
+- [Atlasian git tutorial](https://www.atlassian.com/git/tutorials)
+- [Software Carpentry git tutorial](https://swcarpentry.GitHub.io/git-novice/)
 - [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
-- [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
-- [Flight rules for Git](https://github.com/k88hudson/git-flight-rules/blob/master/README.md)
+- [Flight rules for Git](https://GitHub.com/k88hudson/git-flight-rules/blob/master/README.md)
 
 
 ---
-# What is Git? 
+# What is Git?
 
 Git is officially defined as a *distributed version control system* (VCS)
 
 - A system that tracks changes to our project files over time
-- record project changes and go back to specific versions of tracked files, at any given point in time 
+- record project changes and go back to specific versions of tracked files, at any given point in time
 - system can be used by many people to collaborate efficiently
 - each developer can have their own version of the project, distributed on their computer
 - later the individual versions of the project can be merged and adapted to the main version of the project
 
 ---
-# What is Github? 
+# What is GitHub?
 
-- [Github](github.com) is an online platform built for collaborative software development that uses the git protocol
-- Git and Github are distinct things
-- Github provides free unlimited private repos 
+- [GitHub](GitHub.com) is an online platform built for collaborative software development that uses the git protocol
+- Git and GitHub are distinct things
+- GitHub provides free unlimited private repos
 - Paid subscriptions for a wide range of services
+  - University affiliation can get you more free stuff
 
-
-Alternatives 
+Alternatives
 
 - [Gitlab](https://about.gitlab.com)
 - [Bitbucket](https://bitbucket.org/product)
@@ -105,46 +105,46 @@ Alternatives
 
 
 ---
-# Why learn git (as an economist)? 
+# Why learn git (as an economist)?
 
 > The master-economist must possess a rare combination of gifts .... He must be mathematician, historian, statesman, philosopher—in some degree....
 
 John Maynard Keynes
 
-Economists today: 
-  
-- Statistical programming 
-- DevTools 
+Economists today:
+
+- Statistical programming
+- DevTools
 - Collaborate (interdisciplinary) (on open source projects)
 
 
 ---
-# Economists work with code 
+# Economists work with code
 
 but it seems we are not adopting many important tools from the experts on code
 
-Why? 
-  
-- Learning new things is costly 
-- Rethink our workflows 
-- Its simply not thought! 
+Why?
+
+- Learning new things is costly
+- Rethink our workflows
+- Its simply not thought!
 
 
 ---
-# Who uses Git? 
-  
-- [Instituations (NY FED)](https://github.com/FRBNY-DSGE)
-- [Econ Projects (QuantEcon Project)](https://github.com/QuantEcon/)
-- [University Departments (ScPo Department of Economics)](https://github.com/ScPoEcon)
+# Who uses Git?
+
+- [Instituations (NY FED)](https://GitHub.com/FRBNY-DSGE)
+- [Econ Projects (QuantEcon Project)](https://GitHub.com/QuantEcon/)
+- [University Departments (ScPo Department of Economics)](https://GitHub.com/ScPoEcon)
 - [Econ software platforms (Dynare)](https://git.dynare.org/Dynare)
-- [Econometric packages (FixEst Package)](https://github.com/lrberge/fixest)
+- [Econometric packages (FixEst Package)](https://GitHub.com/lrberge/fixest)
 - [Individual economists (Victor Chernozhukov)](https://www.victorchernozhukov.com/code-and-notebooks)
 
 ---
 # Why use version control (VC)?
 
 Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_revised2_revised.txt?
-  
+
 <div align="center">
 <img src="http://phdcomics.com/comics/archive/phd101212s.gif" height=400>
 </div>
@@ -160,46 +160,46 @@ Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_r
   - Revert any change if needed
   - Back up and distribute copies of files
   - Co-authored research is common: Version control allows easier tracking of collaboration and changes
-  - Work offline and asynchronously
-  - Collaborate remotely, centralized,  in real time
+    - Work offline and asynchronously
+    - Collaborate remotely, centralized,  in real time
 
 ---
-# VC visualized - Changes  
+# VC visualized - Changes
 
 <div align="center">
-<img src="https://uidaholib.github.io/get-git/images/versions.png" height=400>
+<img src="https://uidaholib.GitHub.io/get-git/images/versions.png" height=400>
 </div>
 
-What is version control? https://uidaholib.github.io/get-git/1why.html
+What is version control? https://uidaholib.GitHub.io/get-git/1why.html
 
 
 ---
-# VC visualized - Branches 
+# VC visualized - Branches
 
 <div align="center">
-<img src="https://uidaholib.github.io/get-git/images/branch-merge.png" height=400>
+<img src="https://uidaholib.GitHub.io/get-git/images/branch-merge.png" height=400>
 </div>
 
-What is version control? https://uidaholib.github.io/get-git/1why.html
+What is version control? https://uidaholib.GitHub.io/get-git/1why.html
 
 
 ---
-# Reproducability 
+# Reproducability
 
 - Many journals require data & code with submissions
 - Proper version control makes reproducing results easier
- - DOI integration, off-the-shelf-licensing        
+ - DOI integration, off-the-shelf-licensing
 - VC and open sourcing of your code operationalises the idea of open science and reproducability
 
 Not directly VC but good to know
-- Github offers tools for code testing and code deployment
+- GitHub offers tools for code testing and code deployment
 
 ---
-# Teaching 
+# Teaching
 
-- Using github to teach encourages students to use git and github themselves --> important industry skill
-- Allows to update and test new teaching material before 
-- Easier to upload and distribute new teaching material (when using Github)
+- Using GitHub to teach encourages students to use git and GitHub themselves --> important industry skill
+- Allows to update and test new teaching material before
+- Easier to upload and distribute new teaching material (when using GitHub)
 
 
 ---
@@ -211,7 +211,7 @@ name: learning
 
 
 ---
-# Git concepts 
+# Git concepts
 
 - **repository(repo)**: a collection of files and their history
 - **commit**: a snapshot of your files at a given time
@@ -220,32 +220,32 @@ name: learning
 - **(remote) Repository**: a version of the repository hosted elsewhere
 - **gitignore**: a file that declares what should **NOT** be tracked
 - **Main (or Master)**: Main version of the code
-- **Branches**: sequence of commits which can trace *alternative* history and versions of your code in the repo 
+- **Branches**: sequence of commits which can trace *alternative* history and versions of your code in the repo
 - **HEAD**: pointer to branch ("Where your next commit would go")
 
 ---
-# Basic Git commands 
+# Basic Git commands
 
 - **git init**: start a new repository in the working directory
 - **git status**: query the state of your director
 - **git add**: add new or modified files to the staging area
-- **git commit**: commit changes in the index 
-- **git branch**: create  or list branch
-- **git checkout**: switch branch
+- **git commit**: commit changes in the index
+- **git branch**: create a branch  or list branches
+- **git checkout**: switch within a branch or between branches
 - **git diff**: show what changed wrt. the last commit or index
 - **git log**: show the commit history
 - **git push**: send your local changes to a remote server
-- **git pull (git fetch; git merge)**: get last changes from a remote 
+- **git pull (git fetch; git merge)**: get last changes from a remote
 - **git clone**: create local copy of public source project
 
 ---
-# Setup 
+# Setup
 
 - Download [git](https://git-scm.com/downloads)
 - Install and if necessary set path
 - Terminal editor
 - Various shell addons for various terminals
-- Configure your name and & email 
+- Configure your name and & email
 
 
 ```bash
@@ -253,22 +253,22 @@ git config --global user.name "Your name"
 git config --global user.email "your@email.com"
 ```
 
-Tips: 
-  ```bash
+Tips:
+```bash
 git config --global core.editor "code --wait" # sets VS code as core editor
 git config --global -e
 ```
 
-Possible trap: 
-  ```bash
+Possible trap:
+```bash
 git config --global core.autocrlf true # Windows
 git config --global core.autocrlf input # OSX
 ```
 
 ---
-# Collaborate with others: 
-  
-  - Create Github account
+# Collaborate with others:
+
+  - Create GitHub account
   - Star, clone, and fork other projects
   - GitHub Issues are a great way to collaborate (and learn new things)
     - Learn how to create Minimal Working Examples (MWE)
@@ -278,14 +278,14 @@ git config --global core.autocrlf input # OSX
 # Graphical User Interfaces (GUIs)
 
 - RStudio
-- VSCode 
-- Gitlens 
+- VSCode
+- Gitlens
 - Gitkraken
 
 ---
 # Git workflows
 
-  
+
 <div align="center">
 <img src="https://miro.medium.com/max/577/1*AAU1VCV8LMHvVPBYxMBsxg.png" height=450>
 </div>
@@ -294,11 +294,11 @@ A Review of Git Workflow Management https://medium.com/@hengfeng/a-review-of-git
 
 
 ---
-# Basic Workflow 
+# Basic Workflow
 
 1. Create an empty folder
-2. Init repository (**git init**) 
-3. Add files & annotate them 
+2. Init repository (**git init**)
+3. Add files & annotate them
 4. Add the files to the staging area (**git add**)
 5. Commit the files (**git commit**)
 
@@ -308,46 +308,46 @@ A Review of Git Workflow Management https://medium.com/@hengfeng/a-review-of-git
 # Personal remote workflow (Option 1)
 
 - Steps 1-5
-- Create an *empty* repo on github 
-- Link the github remote to your local repo
+- Create an *empty* repo on GitHub
+- Link the GitHub remote to your local repo
 - Push from the local repo to the remote
 - After working on the local repo, repeat steps 4-5
 - If the working tree is not *clean* before pulling from remote, repeat steps 4-5
-- Pull from the remote to the local repo 
+- Pull from the remote to the local repo
 
-Pros: 
- - Decide when to push to Github
+Pros:
+ - Decide when to push to GitHub
  - Language specific project Environments (Julia Environments)
- 
-Cons: 
+
+Cons:
  - Not a good workflow for non-empty remotes
- - In case of non language environment -> no README.md, no liscence, no .gitignore 
+ - In case of non language environment -> no README.md, no liscence, no .gitignore
 
 Always pull from the upstream repo *before* you push any changes
 
 ---
 # Personal remote workflow (Option 2)
 
-- Create a new repo on github
+- Create a new repo on GitHub
    - Add README.md, .gitignore and liscene. Can also add collaborators
-- Clone 
+- Clone remote to an emppty, non-VC local directory
 - Work on your local repo
-- Push from the local to the remote repo 
+- Push from the local to the remote repo
 
-Pros: 
+Pros:
  - Creating the repo on GitHub first means that it will always be "upstream" of your (and any other) local copies
   - In effect, this allows GitHub to act as the central node in the distributed VC network
   - Especially valuable when you are collaborating on a project with others
 
-Cons: 
- - Not every project goes on Github
- - Certain local projects *might* collide with Github created repos
- 
- 
- Always pull from the upstream repo *before* you push any changes 
+Cons:
+ - Not every project goes on GitHub
+ - Certain local projects *might* collide with GitHub created repos
+
+
+ Always pull from the upstream repo *before* you push any changes
 
 ---
-# Working with remotes tips 
+# Working with remotes tips
 
 - `git fecht, git merge` is better than `git pull` if you suspect merge conflicts
 - Do **NOT** `git rebase` public open source repos
@@ -361,25 +361,24 @@ Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/re
 
 
 ---
-# Collaborating workflow 
+# Collaborating workflow
 
-- Step 1
-- Fork a public repo 
+- Fork a public repo
 - Clone the *forked* repo to local empty folder
 - (*Optional: create a dev branch*)
 - Work on the forked repo (*main or dev and then merge back to main*)
 - Push back to the personal fork
 - Create a pull request
-- Review process of pull request 
+- Review process of pull request
 
 ---
 # Workflow visualized
 
 <div align="center">
-<img src="https://uidaholib.github.io/get-git/images/workflow.png" height=400>
+<img src="https://uidaholib.GitHub.io/get-git/images/workflow.png" height=400>
 </div>
 
-Workflow https://uidaholib.github.io/get-git/3workflow.html
+Workflow https://uidaholib.GitHub.io/get-git/3workflow.html
 
 
 
@@ -399,7 +398,7 @@ name: live
 ---
 # Further tips
 
-- Master the [shell](https://github.com/uo-ec510-2020-spring/lectures/tree/master/03-shell)
+- Master the [shell](https://GitHub.com/uo-ec510-2020-spring/lectures/tree/master/03-shell)
 - git with r: Jenny Bryan's amazing [guide](http://happygitwithr.com)
 
 ---
