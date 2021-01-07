@@ -198,8 +198,9 @@ summary {
 <div id="notes" class="section level1">
 <h1>Notes</h1>
 <p>Target Thursday 20:30 for the tutorial</p>
-<div id="intro" class="section level2">
-<h2>1. Intro</h2>
+<ol style="list-style-type: decimal">
+<li>Intro</li>
+</ol>
 <p>Here we will show how to init a repo, show git status, git log, add files in the staging area and commit files.</p>
 <p>make directory &amp; cd into directory</p>
 <pre class="bash"><code>mkdir git_tutorial
@@ -249,13 +250,12 @@ git add animals.md</code></pre>
 <pre class="bash"><code>git add -A</code></pre>
 <p>Commit</p>
 <pre class="bash"><code>git commit -m&quot;make a mistake&quot;</code></pre>
-</div>
 <div id="revert-back" class="section level2">
 <h2>2. Revert back</h2>
 <p>Show the log and copy git hashkey</p>
 <pre class="bash"><code>git log</code></pre>
 <p>Checkout to previous version</p>
-<pre class="bash"><code>git checkout </code></pre>
+<pre class="bash"><code>git checkout</code></pre>
 <p>Show status and show log</p>
 <pre class="bash"><code>git status
 git log</code></pre>
@@ -288,37 +288,36 @@ git commit -m&quot;add fruits.md&quot;</code></pre>
 </div>
 <div id="github" class="section level2">
 <h2>4. Github</h2>
-<p>Here we will show how to create a public repo on github, setup the repo, link the remote, pull and push to the repo.Here we will show how to create a public repo on github, setup the repo, link the remote, pull and push to the repo.</p>
 <p>Show status</p>
 <pre class="bash"><code>git status</code></pre>
 <ul>
-<li>go to github</li>
+<li>go to GitHub</li>
 <li>new public repo</li>
 <li>repo name</li>
 <li>add no other files</li>
-<li>copy the terminal commands from github</li>
+<li>copy the terminal commands from <a href="GitHub">GitHub</a></li>
 </ul>
 <p>The first command creates the remote The second command makes sure that you’re on local main The third command pushes local main to remote main</p>
 <p>Show status</p>
 <pre class="bash"><code>git status</code></pre>
-<p>Currently only the master branch is on github but what if I want to add a new development branch to</p>
+<p>Currently only the master branch is on GitHub but what if I want to add a new development branch to</p>
 <p>Create new local branch</p>
 <pre class="bash"><code>git checkout -b people</code></pre>
-<p>Push branch people up to github</p>
+<p>Push branch people up to GitHub</p>
 <pre class="bash"><code>git push -u origin people</code></pre>
-<p>Go to github and show the people branch</p>
-<p>Got back to github and create a README.md file</p>
+<p>Go to GitHub and show the people branch</p>
+<p>Got back to GitHub and create a README.md file</p>
 <p>Pull from the remote</p>
 <pre class="bash"><code>git pull origin main</code></pre>
 <p>Show status</p>
 <pre class="bash"><code>git status</code></pre>
 </div>
-<div id="collaborting" class="section level2">
-<h2>5. Collaborting</h2>
+<div id="collaborating" class="section level2">
+<h2>5. Collaborating</h2>
 <p>In this part Heili forks and works and Nicolas test-repo and then creates a pull request. Nicolas will review the pull request, deal with merge conflicts</p>
 <ul>
 <li>Fork the repo</li>
-<li>Show the people on github your repo</li>
+<li>Show the people on GitHub your repo</li>
 <li>Add a file called “places”</li>
 <li>Write some places you like</li>
 <li>Change in my file the first animals entry from dogs to cats (so that we can teach how to resolve merge conflicts)</li>
@@ -332,7 +331,7 @@ git commit -m&quot;add fruits.md&quot;</code></pre>
 <li>Fix merge conflicts</li>
 <li>Merge</li>
 </ul>
-<p>I will create another artificial problem. I will change in the local file an line that would conflict with the newely merged remote.</p>
+<p>I will create another artificial problem. I will change in the local file an line that would conflict with the newly merged remote.</p>
 <ul>
 <li>make changes to local master</li>
 <li>git pull to local master</li>

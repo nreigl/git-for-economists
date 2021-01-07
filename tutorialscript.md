@@ -1,6 +1,6 @@
 ---
 title: Script live tutorial
-[author](author): "Heili Hein & Nicolas Reigl"
+author: "Heili Hein & Nicolas Reigl"
 date: 01.01.2020
 ---
 

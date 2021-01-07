@@ -216,7 +216,7 @@ name: learning
 - **repository(repo)**: a collection of files and their history
 - **commit**: a snapshot of your files at a given time
 - **Staging area**: where you list files that will go into your next commit
-- **(local) Repository**: where the commits are stored; ie, it contains thef ull history of previous versions of the files in the repository, and relevant metadata
+- **(local) Repository**: where the commits are stored; ie, it contains the full history of previous versions of the files in the repository, and relevant metadata
 - **(remote) Repository**: a version of the repository hosted elsewhere
 - **gitignore**: a file that declares what should **NOT** be tracked
 - **Main (or Master)**: Main version of the code
@@ -347,20 +347,6 @@ Cons:
  Always pull from the upstream repo *before* you push any changes
 
 ---
-# Working with remotes tips
-
-- `git fecht, git merge` is better than `git pull` if you suspect merge conflicts
-- Do **NOT** `git rebase` public open source repos
-
-<div align="center">
-<img src="https://assets-global.website-files.com/5d7678efce0c5739c9bc3bf1/5dc320c753535c09450e4d76_git-rebase-2-example.png" height=400>
-</div>
-
-Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/regain-control-of-branches-with-git-rebase-onto
-
-
-
----
 # Collaborating workflow
 
 - Fork a public repo
@@ -396,12 +382,6 @@ name: live
 
 
 ---
-# Further tips
-
-- Master the [shell](https://GitHub.com/uo-ec510-2020-spring/lectures/tree/master/03-shell)
-- git with r: Jenny Bryan's amazing [guide](http://happygitwithr.com)
-
----
 class: inverse, center, middle
 name: questions
 
@@ -409,3 +389,29 @@ name: questions
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
 
 
+---
+class: inverse, center, middle
+name: appendix
+
+# Appendix
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+---
+# Working with remotes
+
+- `git fecht, git merge` is better than `git pull` if you suspect merge conflicts
+- Do **NOT** `git rebase` public open source repos
+
+<div align="center">
+<img src="https://assets-global.website-files.com/5d7678efce0c5739c9bc3bf1/5dc320c753535c09450e4d76_git-rebase-2-example.png" height=400>
+</div>
+
+Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/regain-control-of-branches-with-git-rebase-onto
+
+
+---
+# Further tips
+
+- Master the [shell](https://GitHub.com/uo-ec510-2020-spring/lectures/tree/master/03-shell)
+- git with r: Jenny Bryan's amazing [guide](http://happygitwithr.com)
