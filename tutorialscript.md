@@ -1,36 +1,38 @@
 ---
 title: Script live tutorial
-author: "Heili Hein & Nicolas Reigl"
-date: 01.01.2020 
+[author](author): "Heili Hein & Nicolas Reigl"
+date: 01.01.2020
 ---
 
 
-# Notes 
+# Notes
 
 Target Thursday 20:30 for the tutorial
 
 
-## 1. Intro
+1. Intro
 
-Here we will show how to init a repo, show git status, git log, add files in the staging area and commit files. 
+Here we will show how to init a repo, show git status, git log, add files in the staging area and commit files.
 
-make directory & cd into directory 
+
+
+make directory & cd into directory
 ```bash
 mkdir git_tutorial
 cd git_tutorial
 ```
 
-Show that working tree is not VC 
+Show that working tree is not VC
 ```bash
 git status
 ```
 
-Initiate a repo 
+Initiate a repo
 ```bash
 git init
 ```
 
-Show status 
+Show status
 ```bash
 git status
 ```
@@ -46,7 +48,7 @@ Create a new markdown document
 touch animals.md
 ```
 
-Show status 
+Show status
 ```bash
 git status
 ```
@@ -56,7 +58,7 @@ Add animals.md from the stating area
 git add animals.md
 ```
 
-Show status 
+Show status
 ```bash
 git status
 ```
@@ -67,7 +69,7 @@ Make a change in animals.md
 nvim animals.md
 ```
 
-Show status 
+Show status
 ```bash
 git status
 ```
@@ -81,17 +83,17 @@ git add animals.md
 
 
 
-Commit 
+Commit
 ```bash
 git commit -m"add animals.md"
 ```
 
-Show status 
+Show status
 ```bash
 git status
 ```
 
-Show log 
+Show log
 ```bash
 git log
 ```
@@ -102,18 +104,18 @@ Add another file
 touch vegitables.md
 ```
 
-Show status 
+Show status
 ```bash
 git status
 ```
 
 
-Add all files 
+Add all files
 ```bash
 git add -A
 ```
 
-Commit all files 
+Commit all files
 ```bash
 git commit -m "add vegetables.md"
 ```
@@ -128,25 +130,25 @@ Git add all files
 git add -A
 ```
 
-Commit 
+Commit
 ```bash
 git commit -m"make a mistake"
 ```
 
-## 2. Revert back 
+## 2. Revert back
 
-Show the log and copy git hashkey 
+Show the log and copy git hashkey
 ```bash
 git log
 ```
 
 Checkout to previous version
 ```bash
-git checkout 
+git checkout
 ```
 
 
-Show status and show log 
+Show status and show log
 ```bash
 git status
 git log
@@ -178,7 +180,7 @@ touch fruits.md
 nvim fruits.md
 ```
 
-Add and commit 
+Add and commit
 ```bash
 git add -A
 git commit -m"add fruits.md"
@@ -195,96 +197,94 @@ git diff master developtment
 ```
 
 
-Merge master with development 
+Merge master with development
 ```bash
 git merge master development
 ```
 
 
-## Switch to GUI 
+## Switch to GUI
 
-Open the folder in VS Code and show the audiance around. 
+Open the folder in VS Code and show the audiance around.
 
 
 
 ## 4. Github
 
-Here we will show how to create a public repo on github, setup the repo, link the remote, pull and push to the repo.Here we will show how to create a public repo on github, setup the repo, link the remote, pull and push to the repo.  
 
-
-Show status 
+Show status
 ```bash
 git status
 ```
 
- - go to github 
+ - go to GitHub
  - new public repo
- - repo name 
- - add no other files 
- - copy the terminal commands from github
+ - repo name
+ - add no other files
+ - copy the terminal commands from [GitHub](GitHub)
 
 The first command creates the remote
-The second command makes sure that you're on local main 
+The second command makes sure that you're on local main
 The third command pushes local main to remote main
 
-Show status 
+Show status
 ```bash
 git status
 ```
 
 
-Currently only the master branch is on github but what if I want to add a new development branch to 
+Currently only the master branch is on GitHub but what if I want to add a new development branch to
 
 Create new local branch
 ```bash
 git checkout -b people
 ```
 
-Push branch people up to github
+Push branch people up to GitHub
 ```bash
 git push -u origin people
 ```
 
-Go to github and show the people branch
+Go to GitHub and show the people branch
 
 
 
-Got back to github and create a README.md file 
+Got back to GitHub and create a README.md file
 
 
-Pull from the remote 
+Pull from the remote
 ```bash
 git pull origin main
 ```
 
-Show status 
+Show status
 ```bash
 git status
 ```
 
-## 5. Collaborting
+## 5. Collaborating
 
 In this part Heili forks and works and Nicolas test-repo and then creates a pull request. Nicolas will review the pull request, deal with merge conflicts
 
  - Fork the repo
- - Show the people on github your repo
+ - Show the people on GitHub your repo
  - Add a file called "places"
  - Write some places you like
  - Change in my file the first animals entry from dogs to cats (so that we can teach how to resolve merge conflicts)
- - Commit everything and create a pull request 
- 
- 
+ - Commit everything and create a pull request
+
+
 ### Switch back to my session
- 
- 
- - Review pull request 
- - Accept pull request 
+
+
+ - Review pull request
+ - Accept pull request
  - Fix merge conflicts
  - Merge
- 
- 
- I will create another artificial problem. I will change in the local file an line that would conflict with the newely merged remote. 
- 
- - make changes to local master 
- - git pull to local master 
- 
+
+
+ I will create another artificial problem. I will change in the local file an line that would conflict with the newly merged remote.
+
+ - make changes to local master
+ - git pull to local master
+
