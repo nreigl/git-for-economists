@@ -236,7 +236,10 @@ name: learning
 
 - **git init**: start a new repository in the working directory
 - **git status**: query the state of your director
-- **git add**: add new or modified files to the staging area
+- **git add**: add new or modified files to the staging area 
+ - **git add .**: adds all file excluding those defined in the .gitignore
+ - **git add -u**: updates the index of an already staged file 
+ - **git add -A**: adds all file **Including** those defined in the .gitignore
 - **git commit**: commit changes in the index
 - **git branch**: create a branch  or list branches
 - **git checkout**: switch within a branch or between branches

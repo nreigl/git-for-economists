@@ -112,7 +112,7 @@ git status
 
 Add all files
 ```bash
-git add -A
+git add -A # carefull with the .gitignore
 ```
 
 Commit all files
@@ -127,7 +127,7 @@ nvim animal.md
 
 Git add all files
 ```bash
-git add -A
+git add -.
 ```
 
 Commit
