@@ -1,7 +1,7 @@
 ---
-title: "Git for economist"
-author: "Heili Hein & Nicolas Reigl"
-date: "TalTech / Eesti Pank" # `r format(Sys.time(), '%d %B %Y')`
+title: "Git for economists"
+author: "Heili Hein (TalTech) & Nicolas Reigl (TalTech / Eesti Pank)"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts]
@@ -24,14 +24,22 @@ opts_chunk$set(
 ```
 
 # Introduction
-
- - 1.5 hours online introduction to Git & GitHub 
+- **WHY?**
+  - Git has become a core skill in many professions
+  - good to stay in contact with other researchers, share skills
+  
+- **WHAT?**
+  - 1.5 hours introduction to Git & GitHub 
   - split between a **presentation** and a **live-tutorial** 
-      - 5 minutes break 
- - Ask questions whenever you feel like it
-  - State your name and affiliation
- - Heili will moderate the chat 
- 
+  - ask questions whenever you feel like it!
+
+<br/>
+
+*This project has received funding from the European Union’s Horizon 2020 Research and Innovation programme under Grant Agreement No 952574.*
+
+<div align="center">
+<img src="https://oecd-opsi.org/wp-content/uploads/2020/02/Horizon-2020-1024x513.jpg" height=100>
+</div>
 
 ---
 class: inverse, center, middle
@@ -47,41 +55,10 @@ name: prologue
 - [] Add credits
 - [] Add merge conflicts part
 - [] Improve "Learning git steps"
-- [] Date in the YAML: Heili, why does the date bug out?
+- [DONE] Date in the YAML: Heili, why does the date bug out?
 - [] Git figure on title slide? Rewrite title logo .css in libs
-- [] Add H2020 logo with the flag and the sentence
-
----
-# Outreach Activity
-
-- We all have some skills we can share 
- - Data visualization
- - Dynamic Programming 
- - Intro to Julia 
- - Markdown, Latex and Pandoc
-- Why Git-tutorial first? 
- - Knowledge of Git is a soft requirement for many other activities
-
----
-# Disclaimer
-
-- Not related to Eesti Pank
-- We are not computer science experts
-  - content is based on our limited CS background and programming experience
-- Opinionated views on workflows and tools 
-
-
----
-# Resources
-
-Best in class:
-
-- [Git docs](https://git-scm.com/doc)
-- [Atlasian git tutorial](https://www.atlassian.com/git/tutorials)
-- [Software Carpentry git tutorial](https://swcarpentry.GitHub.io/git-novice/)
-- [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
-- [Flight rules for Git](https://GitHub.com/k88hudson/git-flight-rules/blob/master/README.md)
-
+- [DONE] Add H2020 logo with the flag and the sentence
+- [NOTE TO NIC] I deleted two slides that I felt were part of the introduction and redid the intro slide a bit. Changed the location of the resources slide.
 
 ---
 # What is Git?
@@ -209,6 +186,16 @@ Not directly VC but good to know
 - Allows to update and test new teaching material before you make it public to your students
 - Easier to upload and distribute new teaching material (when using GitHub)
 
+---
+# Resources
+
+Best in class:
+
+- [Git docs](https://git-scm.com/doc)
+- [Atlasian git tutorial](https://www.atlassian.com/git/tutorials)
+- [Software Carpentry git tutorial](https://swcarpentry.GitHub.io/git-novice/)
+- [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
+- [Flight rules for Git](https://GitHub.com/k88hudson/git-flight-rules/blob/master/README.md)
 
 ---
 class: inverse, center, middle
