@@ -1,6 +1,6 @@
 ---
 title: "Git for economists"
-author: "Heili Hein (TalTech) & Nicolas Reigl (TalTech / Eesti Pank)"
+author: "Nicolas Reigl (TalTech / Eesti Pank) & Heili Hein (TalTech)"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
@@ -10,6 +10,8 @@ output:
       highlightStyle: GitHub
       highlightLines: true
       countIncrementalSlides: false
+    seal: false
+
 ---
 
 ```{r setup, include=FALSE}
@@ -22,6 +24,17 @@ opts_chunk$set(
   cache=T#, echo=F, warning=F, message=F
   )
 ```
+
+class: title-slide, center, middle
+
+<h2><center>Git for economists</center></h2>
+<img src="githublogo.png" height="100px" style="vertical-align:middle">
+<img src="gitlogo.png" height="100px" style="vertical-align:middle">
+<br/><br/>
+Nicolas Reigl (TalTech / Eesti Pank) & Heili Hein (TalTech)<br/>
+`r format(Sys.time(), '%d %B %Y')`
+
+---
 
 # Introduction
 - **WHY?**
@@ -56,7 +69,7 @@ name: prologue
 - [] Add merge conflicts part
 - [] Improve "Learning git steps"
 - [DONE] Date in the YAML: Heili, why does the date bug out?
-- [] Git figure on title slide? Rewrite title logo .css in libs
+- [DONE] Git figure on title slide? Rewrite title logo .css in libs - made an alternative title slide; can get the "regular" title slide back by removing "seal: false" from YAML
 - [DONE] Add H2020 logo with the flag and the sentence
 - [NOTE TO NIC] I deleted two slides that I felt were part of the introduction and redid the intro slide a bit. Changed the location of the resources slide.
 
