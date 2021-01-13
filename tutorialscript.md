@@ -45,7 +45,7 @@ cd .git/
 
 Create a new markdown document
 ```bash
-touch animals.md
+touch vegetables.md
 ```
 
 Show status
@@ -53,9 +53,9 @@ Show status
 git status
 ```
 
-Add animals.md from the stating area
+Add vegetables.md from the stating area
 ```bash
-git add animals.md
+git add vegetables.md
 ```
 
 Show status
@@ -64,9 +64,9 @@ git status
 ```
 
 
-Make a change in animals.md
+Make a change in vegetables.md
 ```bash
-nvim animals.md
+nvim vegetables.md
 ```
 
 Show status
@@ -74,18 +74,18 @@ Show status
 git status
 ```
 
-Add animals.md from the stating area
+Add vegetables.md from the stating area
 ```bash
 git add -u # Stage updated files
 git add . # Stage new files
-git add animals.md
+git add vegetables.md
 ```
 
 
 
 Commit
 ```bash
-git commit -m"add animals.md"
+git commit -m"add vegetables.md"
 ```
 
 Show status
@@ -120,7 +120,7 @@ Commit all files
 git commit -m "add vegetables.md"
 ```
 
-Change in animals.md & and add vegetable
+Change in vegetables.md & and add vegetable
 ```bash
 nvim animal.md
 ```
@@ -199,8 +199,11 @@ git diff master developtment
 
 Merge master with development
 ```bash
-git merge master development
+git merge master # master is the receiving branch  
 ```
+
+
+
 
 
 ## Switch to GUI
@@ -237,15 +240,15 @@ Currently only the master branch is on GitHub but what if I want to add a new de
 
 Create new local branch
 ```bash
-git checkout -b people
+git checkout -b sweats
 ```
 
-Push branch people up to GitHub
+Push branch sweats up to GitHub
 ```bash
-git push -u origin people
+git push -u origin sweats
 ```
 
-Go to GitHub and show the people branch
+Go to GitHub and show the sweats branch
 
 
 
@@ -267,10 +270,10 @@ git status
 In this part Heili forks and works and Nicolas test-repo and then creates a pull request. Nicolas will review the pull request, deal with merge conflicts
 
  - Fork the repo
- - Show the people on GitHub your repo
+ - Show the sweats on GitHub your repo
  - Add a file called "places"
  - Write some places you like
- - Change in my file the first animals entry from dogs to cats (so that we can teach how to resolve merge conflicts)
+ - Change in my file the first vegetables entry from dogs to cats (so that we can teach how to resolve merge conflicts)
  - Commit everything and create a pull request
 
 
