@@ -4,8 +4,7 @@
     <title>Git for economists</title>
     <meta charset="utf-8" />
     <meta name="author" content="Nicolas Reigl (TalTech / Eesti Pank) &amp; Heili Hein (TalTech)" />
-    <meta name="date" content="2021-01-14" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
+    <meta name="date" content="2021-01-15" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -23,19 +22,19 @@ class: title-slide, center, middle
 &lt;img src="githublogo.png" height="100px" style="vertical-align:middle"&gt;
 &lt;br/&gt;&lt;br/&gt;
 Nicolas Reigl (TalTech / Eesti Pank) &amp; Heili Hein (TalTech)&lt;br/&gt;
-14 January 2021
+15 January 2021
 
 ---
 
 # Introduction
 - **WHY?**
-  - Outreach: Good to stay in contact with other researchers, share skills
+  - Good to stay in contact with other researchers, share skills
   - Git has become a core skill in many professions
   
 - **WHAT?**
   - 1.5 hours introduction to Git &amp; GitHub 
-  - split between a **presentation** and a **live-tutorial** 
-  - ask questions whenever you feel like it!
+  - Split between a **presentation** and a **live-tutorial** 
+  - Ask questions whenever you feel like it!
 
 &lt;br/&gt;
 
@@ -52,17 +51,6 @@ name: prologue
 # Prologue
 
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
-
----
-# To do
-
-- [] Add credits
-- [] Add merge conflicts part
-- [] Improve "Learning git steps"
-- [DONE] Date in the YAML: Heili, why does the date bug out?
-- [DONE] Git figure on title slide? Rewrite title logo .css in libs - made an alternative title slide; can get the "regular" title slide back by removing "seal: false" from YAML
-- [DONE] Add H2020 logo with the flag and the sentence
-- [NOTE TO NIC] I deleted two slides that I felt were part of the introduction and redid the intro slide a bit. Changed the location of the resources slide.
 
 ---
 # What is Git?
@@ -103,19 +91,19 @@ Tasks economists perform today:
 ---
 # Economists work with code
 
-but it seems we are not adopting many important tools from the experts on code
+But it seems we are not adopting many important tools from the experts on code
 
 Why?
 
 - Learning new things is costly
 - Rethink our workflows
-- Its simply not thought!
+- It's simply not thought!
 
 
 ---
 # Who uses Git?
 
-- [Instituations (NY FED)](https://GitHub.com/FRBNY-DSGE)
+- [Institutions (NY FED)](https://GitHub.com/FRBNY-DSGE)
 - [Econ Projects (QuantEcon Project)](https://GitHub.com/QuantEcon/)
 - [University Departments (ScPo Department of Economics)](https://GitHub.com/ScPoEcon)
 - [Econ software platforms (Dynare)](https://git.dynare.org/Dynare)
@@ -134,19 +122,19 @@ Do you have files like final.txt, final_revised.txt, final_revised2.txt, final_r
 'Piled Higher and Deeper' by Jorge Cham www.phdcomics.com
 
 ---
-# VC with git
+# VC with Git
 
   - Keep track of changes to text files line-by-line over time
   - Keep track of what you changed between different versions
   - Branching and merging: Experiment safely; integrate when done (robustness checks, revisions)
   - Revert any change if needed
   - Back up and distribute copies of files
-  - Co-authored research is common: Version control allows easier tracking of collaboration and changes
+  - Co-authored research is common: version control allows easier tracking of collaboration and changes
     - Work offline and asynchronously
     - Collaborate remotely, centralized,  in real time
 
 ---
-# VC visualized - Changes
+# VC visualized: changes
 
 &lt;div align="center"&gt;
 &lt;img src="https://uidaholib.GitHub.io/get-git/images/versions.png" height=400&gt;
@@ -156,7 +144,7 @@ What is version control? https://uidaholib.GitHub.io/get-git/1why.html
 
 
 ---
-# VC visualized - Branches
+# VC visualized: branches
 
 &lt;div align="center"&gt;
 &lt;img src="https://uidaholib.GitHub.io/get-git/images/branch-merge.png" height=400&gt;
@@ -166,19 +154,15 @@ What is version control? https://uidaholib.GitHub.io/get-git/1why.html
 
 
 ---
-# Reproducability
-
+# Reproducibility
 
 - Many journals require data &amp; code with submissions
-- Proper version control makes reproducing results easier
+- Proper version control makes reproduction easier
  - GiHub: DOI integration, off-the-shelf-licensing
 
 &gt; VC and open sourcing of your code operationalises the idea of open science and reproducability
 
 Grant McDermont, [Big data in Economics](https://github.com/uo-ec510-2020-spring/lectures/blob/master/02-git/02-git.pdf)
-
-Not directly VC but good to know
-- GitHub offers tools for code testing and code deployment
 
 ---
 # Teaching
@@ -190,8 +174,6 @@ Not directly VC but good to know
 
 ---
 # Resources
-
-Best in class:
 
 - [Git docs](https://git-scm.com/doc)
 - [Atlasian git tutorial](https://www.atlassian.com/git/tutorials)
@@ -211,29 +193,29 @@ name: learning
 &lt;/div&gt;
 
 ---
-# Git concepts
+# Important Git concepts
 
 - **repository (repo)**: a collection of files and their history
 - **commit**: a snapshot of your files at a given time
-- **Staging area**: where you list files that will go into your next commit
-- **(local) Repository**: where the commits are stored; ie, it contains the full history of previous versions of the files in the repository, and relevant metadata
-- **(remote) Repository**: a version of the repository hosted elsewhere
+- **staging area**: where you list files that will go into your next commit
+- **(local) repository**: where the commits are stored; i.e., it contains the full history of previous versions of the files in the repository, and relevant metadata
+- **(remote) repository**: a version of the repository hosted elsewhere
 - **gitignore**: a file that declares what should **NOT** be tracked
-- **Main (or Master)**: Main version of the code
-- **Branches**: sequence of commits which can trace *alternative* history and versions of your code in the repo
+- **main (or master)**: main version of the code
+- **branches**: sequence of commits which can trace *alternative* history and versions of your code in the repo
 - **HEAD**: pointer to branch ("Where your next commit would go")
 
 ---
-# Basic Git commands
+# Basic Git shell commands
 
 - **git init**: start a new repository in the working directory
 - **git status**: query the state of your directory
 - **git add**: add new or modified files to the staging area 
- - **git add .**: adds all file excluding those defined in the .gitignore
+ - **git add .**: adds all files excluding those defined in the .gitignore
  - **git add -u**: updates the index of an already staged file 
- - **git add -A**: adds all file **Including** those defined in the .gitignore
+ - **git add -A**: adds all files **Including** those defined in the .gitignore
 - **git commit**: commit changes in the index
-- **git branch**: create a branch  or list branches
+- **git branch**: create a branch or list branches
 - **git checkout**: switch within a branch or between branches
 - **git diff**: show what changed wrt. the last commit or index
 - **git log**: show the commit history
@@ -257,7 +239,7 @@ git config --global user.email "your@email.com"
 
 Tips:
 ```bash
-git config --global core.editor "code --wait" # sets VS code as core editor
+git config --global core.editor "code --wait" # sets VS Vode as core editor
 git config --global -e
 ```
 
@@ -268,7 +250,7 @@ git config --global core.autocrlf input # OSX
 ```
 
 ---
-# Collaborate with others:
+# Collaborate with others
 
   - Create GitHub account
   - Star, clone, and fork other projects
@@ -285,12 +267,11 @@ Command line based editors:
 Graphical User Interfaces (GUIs)
 
 - RStudio
-- VSCode
-- Gitkraken
+- Visual Studio Code
+- GitKraken
 
 ---
 # Git workflows
-
 
 &lt;div align="center"&gt;
 &lt;img src="https://miro.medium.com/max/577/1*AAU1VCV8LMHvVPBYxMBsxg.png" height=450&gt;
@@ -300,7 +281,7 @@ A Review of Git Workflow Management https://medium.com/@hengfeng/a-review-of-git
 
 
 ---
-# Basic Workflow
+# Basic workflow
 
 1. Create an empty folder
 2. Init repository (**git init**)
@@ -309,9 +290,8 @@ A Review of Git Workflow Management https://medium.com/@hengfeng/a-review-of-git
 5. Commit the files (**git commit**)
 
 
-
 ---
-# Personal remote workflow (Option 1)
+# Personal remote workflow (option 1)
 
 - Steps 1-5
 - Create an *empty* repo on GitHub
@@ -324,15 +304,15 @@ Pros:
 
 Cons:
  - Not a good workflow for non-empty remotes
- - In case of non language environment -&gt; no README.md, no liscence, no .gitignore
+ - In case of non-language environment -&gt; no README.md, no lisence, no .gitignore
 
-Always pull from the upstream repo *before* you push any changes
+Always pull from the upstream repo *before* you push any changes!
 
 ---
-# Personal remote workflow (Option 2)
+# Personal remote workflow (option 2)
 
 - Create a new repo on GitHub
-   - Add README.md, .gitignore and liscene. Can also add collaborators
+   - Add README.md, .gitignore and license. Can also add collaborators
 - Clone remote to an emppty, non-VC local directory
 - Work on your local repo
 - Push from the local to the remote repo
@@ -347,7 +327,7 @@ Cons:
  - Certain local projects *might* collide with GitHub created repos
 
 
- Always pull from the upstream repo *before* you push any changes
+ Always pull from the upstream repo *before* you push any changes!
 
 ---
 # Collaborating workflow
@@ -402,14 +382,14 @@ name: appendix
 
 
 ---
-# Tips: Terminal and GUIs
+# Tips: terminal and GUIs
 
 - Master the [shell](https://GitHub.com/uo-ec510-2020-spring/lectures/tree/master/03-shell)
 - git with r: Jenny Bryan's amazing [guide](http://happygitwithr.com)
 
 
 ---
-# Tips: Working with remotes
+# Tips: working with remotes
 
 - `git fecht, git merge` is better than `git pull` if you suspect merge conflicts
 - Do **NOT** `git rebase` public open source repos
@@ -422,7 +402,7 @@ Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/re
 
 
 ---
-#  Tips: Diff and merge tool
+#  Tips: diff and merge tool
 
 Add the following configuration to your *gitconfig* to use the VS Code editor for diff and merge operations. 
 
@@ -438,8 +418,7 @@ tool
     cmd = code --wait --diff $LOCAL $REMOTE
 ```
 
-Type```git difftool``` in your terminal to open VS Code for diff operations and  ```git mergetool``` to open VS Code for merge operations. 
-
+Type ```git difftool``` in your terminal to open VS Code for diff operations and  ```git mergetool``` to open VS Code for merge operations.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
