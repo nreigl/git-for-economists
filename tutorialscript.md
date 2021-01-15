@@ -202,6 +202,17 @@ Merge master with development
 git merge master # master is the receiving branch  
 ```
 
+### Create a merge conflict 
+
+
+
+```bash
+git checkout development # master is the receiving branch  
+```
+
+```bash
+nvim vegetables # master is the receiving branch  
+```
 
 
 

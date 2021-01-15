@@ -4,7 +4,7 @@
     <title>Git for economists</title>
     <meta charset="utf-8" />
     <meta name="author" content="Nicolas Reigl (TalTech / Eesti Pank) &amp; Heili Hein (TalTech)" />
-    <meta name="date" content="2021-01-12" />
+    <meta name="date" content="2021-01-14" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
@@ -19,18 +19,18 @@
 class: title-slide, center, middle
 
 &lt;h2&gt;&lt;center&gt;Git for economists&lt;/center&gt;&lt;/h2&gt;
-&lt;img src="githublogo.png" height="100px" style="vertical-align:middle"&gt;
 &lt;img src="gitlogo.png" height="100px" style="vertical-align:middle"&gt;
+&lt;img src="githublogo.png" height="100px" style="vertical-align:middle"&gt;
 &lt;br/&gt;&lt;br/&gt;
 Nicolas Reigl (TalTech / Eesti Pank) &amp; Heili Hein (TalTech)&lt;br/&gt;
-12 January 2021
+14 January 2021
 
 ---
 
 # Introduction
 - **WHY?**
+  - Outreach: Good to stay in contact with other researchers, share skills
   - Git has become a core skill in many professions
-  - good to stay in contact with other researchers, share skills
   
 - **WHAT?**
   - 1.5 hours introduction to Git &amp; GitHub 
@@ -92,13 +92,9 @@ Alternatives
 
 
 ---
-# Why learn git (as an economist)?
+# Why learn Git as an economist?
 
-&gt; The master-economist must possess a rare combination of gifts .... He must be mathematician, historian, statesman, philosopher—in some degree....
-
-John Maynard Keynes
-
-Economists today:
+Tasks economists perform today:
 
 - Statistical programming
 - Collaborate (interdisciplinary) (on open source projects)
@@ -177,8 +173,9 @@ What is version control? https://uidaholib.GitHub.io/get-git/1why.html
 - Proper version control makes reproducing results easier
  - GiHub: DOI integration, off-the-shelf-licensing
 
-VC and open sourcing of your code operationalises the idea of open science and reproducability
+&gt; VC and open sourcing of your code operationalises the idea of open science and reproducability
 
+Grant McDermont, [Big data in Economics](https://github.com/uo-ec510-2020-spring/lectures/blob/master/02-git/02-git.pdf)
 
 Not directly VC but good to know
 - GitHub offers tools for code testing and code deployment
@@ -186,9 +183,10 @@ Not directly VC but good to know
 ---
 # Teaching
 
-- Using Git to teach encourages students to use git and GitHub themselves --&gt; important industry skill
-- Allows to update and test new teaching material before you make it public to your students
+- Update and test new teaching material before you make it public 
 - Easier to upload and distribute new teaching material (when using GitHub)
+- Facilitate collaborative student projects
+- Important industry skill
 
 ---
 # Resources
@@ -208,11 +206,14 @@ name: learning
 # Learning Git(Hub)
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
 
+&lt;div align="center"&gt;
+&lt;img src="https://imgs.xkcd.com/comics/git.png" height=400&gt;
+&lt;/div&gt;
 
 ---
 # Git concepts
 
-- **repository(repo)**: a collection of files and their history
+- **repository (repo)**: a collection of files and their history
 - **commit**: a snapshot of your files at a given time
 - **Staging area**: where you list files that will go into your next commit
 - **(local) Repository**: where the commits are stored; ie, it contains the full history of previous versions of the files in the repository, and relevant metadata
@@ -226,7 +227,7 @@ name: learning
 # Basic Git commands
 
 - **git init**: start a new repository in the working directory
-- **git status**: query the state of your director
+- **git status**: query the state of your directory
 - **git add**: add new or modified files to the staging area 
  - **git add .**: adds all file excluding those defined in the .gitignore
  - **git add -u**: updates the index of an already staged file 
@@ -246,7 +247,6 @@ name: learning
 - Download [git](https://git-scm.com/downloads)
 - Install and if necessary set path
 - Terminal editor
-- Various shell addons for various terminals
 - Configure your name and &amp; email
 
 
@@ -273,8 +273,6 @@ git config --global core.autocrlf input # OSX
   - Create GitHub account
   - Star, clone, and fork other projects
   - GitHub Issues are a great way to collaborate (and learn new things)
-    - Learn how to create Minimal Working Examples (MWE)
-
 
 ---
 # Editors
@@ -288,7 +286,6 @@ Graphical User Interfaces (GUIs)
 
 - RStudio
 - VSCode
-  - Gitlens
 - Gitkraken
 
 ---
@@ -320,9 +317,6 @@ A Review of Git Workflow Management https://medium.com/@hengfeng/a-review-of-git
 - Create an *empty* repo on GitHub
 - Link the GitHub remote to your local repo
 - Push from the local repo to the remote
-- After working on the local repo, repeat steps 4-5
-- If the working tree is not *clean* before pulling from remote, repeat steps 4-5
-- Pull from the remote to the local repo
 
 Pros:
  - Decide when to push to GitHub
@@ -358,7 +352,7 @@ Cons:
 ---
 # Collaborating workflow
 
-- Fork a public repo
+- Fork a public repo on GitHub
 - Clone the *forked* repo to local empty folder
 - (*Optional: create a dev branch*)
 - Work on the forked repo (*main or dev and then merge back to main*)
@@ -406,8 +400,16 @@ name: appendix
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
 
 
+
 ---
-# Working with remotes
+# Tips: Terminal and GUIs
+
+- Master the [shell](https://GitHub.com/uo-ec510-2020-spring/lectures/tree/master/03-shell)
+- git with r: Jenny Bryan's amazing [guide](http://happygitwithr.com)
+
+
+---
+# Tips: Working with remotes
 
 - `git fecht, git merge` is better than `git pull` if you suspect merge conflicts
 - Do **NOT** `git rebase` public open source repos
@@ -420,10 +422,24 @@ Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/re
 
 
 ---
-# Further tips
+#  Tips: Diff and merge tool
 
-- Master the [shell](https://GitHub.com/uo-ec510-2020-spring/lectures/tree/master/03-shell)
-- git with r: Jenny Bryan's amazing [guide](http://happygitwithr.com)
+Add the following configuration to your *gitconfig* to use the VS Code editor for diff and merge operations. 
+
+```bash 
+tool
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+```
+
+Type```git difftool``` in your terminal to open VS Code for diff operations and  ```git mergetool``` to open VS Code for merge operations. 
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
