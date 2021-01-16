@@ -27,6 +27,7 @@ Show that working tree is not VC
 git status
 ```
 
+
 Initiate a repo
 ```bash
 git init
@@ -36,6 +37,13 @@ Show status
 ```bash
 git status
 ```
+
+
+```bash
+git --version
+git --help
+```
+
 
 Cd into hidden folder and exit back
 ```bash
@@ -219,7 +227,7 @@ nvim vegetables # master is the receiving branch
 
 ## Switch to GUI
 
-Open the folder in VS Code and show the audiance around.
+Open the folder in VS Code and show the audience around.
 
 
 
