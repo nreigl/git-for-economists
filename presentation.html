@@ -4,7 +4,12 @@
     <title>Git for economists</title>
     <meta charset="utf-8" />
     <meta name="author" content="Nicolas Reigl (TalTech / Eesti Pank) &amp; Heili Hein (TalTech)" />
+<<<<<<< HEAD
     <meta name="date" content="2021-01-15" />
+=======
+    <meta name="date" content="2021-01-17" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+>>>>>>> 1dc6589 (Minor changes in ordering and language editing)
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -22,7 +27,11 @@ class: title-slide, center, middle
 &lt;img src="githublogo.png" height="100px" style="vertical-align:middle"&gt;
 &lt;br/&gt;&lt;br/&gt;
 Nicolas Reigl (TalTech / Eesti Pank) &amp; Heili Hein (TalTech)&lt;br/&gt;
+<<<<<<< HEAD
 15 January 2021
+=======
+17 January 2021
+>>>>>>> 1dc6589 (Minor changes in ordering and language editing)
 
 ---
 
@@ -173,15 +182,6 @@ Grant McDermont, [Big data in Economics](https://github.com/uo-ec510-2020-spring
 - Important industry skill
 
 ---
-# Resources
-
-- [Git docs](https://git-scm.com/doc)
-- [Atlasian git tutorial](https://www.atlassian.com/git/tutorials)
-- [Software Carpentry git tutorial](https://swcarpentry.GitHub.io/git-novice/)
-- [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
-- [Flight rules for Git](https://GitHub.com/k88hudson/git-flight-rules/blob/master/README.md)
-
----
 class: inverse, center, middle
 name: learning
 
@@ -191,6 +191,17 @@ name: learning
 &lt;div align="center"&gt;
 &lt;img src="https://imgs.xkcd.com/comics/git.png" height=400&gt;
 &lt;/div&gt;
+
+
+---
+# Resources
+
+- [Git docs](https://git-scm.com/doc)
+- [Atlasian git tutorial](https://www.atlassian.com/git/tutorials)
+- [Software Carpentry git tutorial](https://swcarpentry.GitHub.io/git-novice/)
+- [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
+- [Flight rules for Git](https://GitHub.com/k88hudson/git-flight-rules/blob/master/README.md)
+
 
 ---
 # Important Git concepts
@@ -208,6 +219,7 @@ name: learning
 ---
 # Basic Git shell commands
 
+<<<<<<< HEAD
 - **git init**: start a new repository in the working directory
 - **git status**: query the state of your directory
 - **git add**: add new or modified files to the staging area 
@@ -222,6 +234,22 @@ name: learning
 - **git push**: send your local changes to a remote server
 - **git pull (git fetch; git merge)**: get last changes from a remote
 - **git clone**: create local copy of public source project
+=======
+- `git init`: start a new repository in the working directory
+- `git status`: query the state of your directory
+- `git add`: add new or modified files to the staging area 
+  - `git add .`: adds all file excluding those defined in the .gitignore
+  - `git add -u`: updates the index of an already staged file 
+  - `git add -A`: adds all file `Including` those defined in the .gitignore
+- `git commit`: commit changes in the index
+- `git branch`: create a branch  or list branches
+- `git checkout`: switch within a branch or between branches
+- `git diff`: show what changed wrt. the last commit or index
+- `git log`: show the commit history
+- `git push`: send your local changes to a remote server
+- `git pull` (`git fetch`; `git merge`): get last changes from a remote
+- `git clone`: create local copy of public source project
+>>>>>>> 1dc6589 (Minor changes in ordering and language editing)
 
 ---
 # Setup
@@ -243,7 +271,7 @@ git config --global core.editor "code --wait" # sets VS Vode as core editor
 git config --global -e
 ```
 
-Possible trap:
+Attention!
 ```bash
 git config --global core.autocrlf true # Windows
 git config --global core.autocrlf input # OSX
@@ -266,9 +294,15 @@ Command line based editors:
 
 Graphical User Interfaces (GUIs)
 
+<<<<<<< HEAD
 - RStudio
 - Visual Studio Code
 - GitKraken
+=======
+- [RStudio](https://rstudio.com/)
+- [VSCode](https://code.visualstudio.com/)
+- [Gitkraken](https://www.gitkraken.com/)
+>>>>>>> 1dc6589 (Minor changes in ordering and language editing)
 
 ---
 # Git workflows
@@ -284,10 +318,10 @@ A Review of Git Workflow Management https://medium.com/@hengfeng/a-review-of-git
 # Basic workflow
 
 1. Create an empty folder
-2. Init repository (**git init**)
+2. Initiate repository (`git init`)
 3. Add files &amp; annotate them
-4. Add the files to the staging area (**git add**)
-5. Commit the files (**git commit**)
+4. Add the files to the staging area (`git add`)
+5. Commit the files (`git commit`)
 
 
 ---
@@ -308,6 +342,7 @@ Cons:
 
 Always pull from the upstream repo *before* you push any changes!
 
+<<<<<<< HEAD
 ---
 # Personal remote workflow (option 2)
 
@@ -328,6 +363,8 @@ Cons:
 
 
  Always pull from the upstream repo *before* you push any changes!
+=======
+>>>>>>> 1dc6589 (Minor changes in ordering and language editing)
 
 ---
 # Collaborating workflow
@@ -341,6 +378,53 @@ Cons:
 - Review process of pull request
 
 ---
+# Merge conflicts 
+  
+- Collaborators work on separated isolated branches to avoid *live* merge conflicts 
+-  `git merge` command's primary function is to combine separate branches and resolve any conflicting
+edits
+- Most of the time Git will figure out how to resolve conflicting changes
+
+
+---
+# Merge conflicts (cont. )
+
+What if Git can not figure out how to resolve a conflicting change?
+
+```bash
+# README
+Some text here.
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Text added by Partner 2.
+=======
+Text added by Partner 1.
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 814e09178910383c128045ce67a58c9c1df3f558.
+More text here.
+```
+- `&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD` Indicates the start of the merge conflict.
+- `=======` Indicates the break point used for comparison.
+- `&gt;&gt;&gt;&gt;&gt;&gt;&gt; &lt;long string&gt;` Indicates the end of the lines that had a merge conflict.
+
+
+---
+# Merge conflicts (cont. )
+
+Fixing these conflicts is a simple matter of (manually) editing the conflicting file&lt;sup&gt;1&lt;/sup&gt;.
+- Delete the lines of the text that you don't want
+- Then, delete the special Git merge conflict symbols
+
+Once that's done, you should be able to stage, commit, pull and finally push your changes to the GitHub repo without any errors. 
+
+
+Caveats
+- P1 gets to decide what to keep because they fixed the merge conflict
+- However, the full commit history is preserved, so P2 can always recover their changes if desired
+ 
+
+.footnote[&lt;sup&gt;1&lt;/sup&gt; If you know *VIM* you can use the terminal to edited the conflicting file but for more complicated merge conflicts, switching to a GUI can proove helpful. For example,  &lt;a href="https://code.visualstudio.com/" target="_blank"&gt;VS Code&lt;/a&gt; offers a powerful merge conflict resolver interface. See Tips: Diff and merge tools in the Appendix.]
+
+
+---
 # Workflow visualized
 
 &lt;div align="center"&gt;
@@ -348,7 +432,6 @@ Cons:
 &lt;/div&gt;
 
 Workflow https://uidaholib.GitHub.io/get-git/3workflow.html
-
 
 
 
@@ -370,6 +453,10 @@ name: questions
 
 # Questions
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+&lt;div align="center"&gt;
+&lt;img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" height=400&gt;
+&lt;/div&gt;
+
 
 
 ---
@@ -402,7 +489,11 @@ Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/re
 
 
 ---
+<<<<<<< HEAD
 #  Tips: diff and merge tool
+=======
+#  Tips: Diff and merge tools
+>>>>>>> 1dc6589 (Minor changes in ordering and language editing)
 
 Add the following configuration to your *gitconfig* to use the VS Code editor for diff and merge operations. 
 
@@ -418,7 +509,33 @@ tool
     cmd = code --wait --diff $LOCAL $REMOTE
 ```
 
+<<<<<<< HEAD
 Type ```git difftool``` in your terminal to open VS Code for diff operations and  ```git mergetool``` to open VS Code for merge operations.
+=======
+Type ```git difftool``` in your terminal to open VS Code for diff operations and  ```git mergetool``` to open VS Code for merge operations. 
+
+---
+# Personal remote workflow (Option 2)
+
+- Create a new repo on GitHub
+   - Add README.md, .gitignore and license. Can also add collaborators
+- Clone remote to an empty, non-VC local directory
+- Work on your local repo
+- Push from the local to the remote repo
+
+Pros:
+ - Creating the repo on GitHub first means that it will always be "upstream" of your (and any other) local copies
+  - In effect, this allows GitHub to act as the central node in the distributed VC network
+  - Especially valuable when you are collaborating on a project with others
+
+Cons:
+ - Not every project goes on GitHub
+ - Certain local projects *might* collide with GitHub created repos
+
+
+ Always pull from the upstream repo *before* you push any changes
+
+>>>>>>> 1dc6589 (Minor changes in ordering and language editing)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

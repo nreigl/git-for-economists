@@ -183,15 +183,6 @@ Grant McDermont, [Big data in Economics](https://github.com/uo-ec510-2020-spring
 - Important industry skill
 
 ---
-# Resources
-
-- [Git docs](https://git-scm.com/doc)
-- [Atlasian git tutorial](https://www.atlassian.com/git/tutorials)
-- [Software Carpentry git tutorial](https://swcarpentry.GitHub.io/git-novice/)
-- [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
-- [Flight rules for Git](https://GitHub.com/k88hudson/git-flight-rules/blob/master/README.md)
-
----
 class: inverse, center, middle
 name: learning
 
@@ -201,6 +192,17 @@ name: learning
 <div align="center">
 <img src="https://imgs.xkcd.com/comics/git.png" height=400>
 </div>
+
+
+---
+# Resources
+
+- [Git docs](https://git-scm.com/doc)
+- [Atlasian git tutorial](https://www.atlassian.com/git/tutorials)
+- [Software Carpentry git tutorial](https://swcarpentry.GitHub.io/git-novice/)
+- [QuantEcon git tutorial](https://julia.quantecon.org/more_julia/version_control.html)
+- [Flight rules for Git](https://GitHub.com/k88hudson/git-flight-rules/blob/master/README.md)
+
 
 ---
 # Important Git concepts
@@ -270,7 +272,7 @@ git config --global core.editor "code --wait" # sets VS Vode as core editor
 git config --global -e
 ```
 
-Possible trap:
+Attention!
 ```bash
 git config --global core.autocrlf true # Windows
 git config --global core.autocrlf input # OSX
@@ -341,6 +343,7 @@ Cons:
 
 Always pull from the upstream repo *before* you push any changes!
 
+<<<<<<< HEAD
 ---
 # Personal remote workflow (option 2)
 
@@ -361,6 +364,8 @@ Cons:
 
 
  Always pull from the upstream repo *before* you push any changes!
+=======
+>>>>>>> 1dc6589 (Minor changes in ordering and language editing)
 
 ---
 # Collaborating workflow
@@ -431,7 +436,6 @@ Workflow https://uidaholib.GitHub.io/get-git/3workflow.html
 
 
 
-
 ---
 class: inverse, center, middle
 name: live
@@ -484,7 +488,11 @@ Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/re
 
 
 ---
+<<<<<<< HEAD
 #  Tips: diff and merge tool
+=======
+#  Tips: Diff and merge tools
+>>>>>>> 1dc6589 (Minor changes in ordering and language editing)
 
 Add the following configuration to your *gitconfig* to use the VS Code editor for diff and merge operations. 
 
