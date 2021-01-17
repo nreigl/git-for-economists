@@ -450,7 +450,9 @@ name: questions
 
 # Questions
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
-
+<div align="center">
+<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" height=400>
+</div>
 
 ---
 class: inverse, center, middle
