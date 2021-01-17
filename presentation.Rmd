@@ -32,7 +32,7 @@ class: title-slide, center, middle
 <img src="githublogo.png" height="100px" style="vertical-align:middle">
 <br/><br/>
 Nicolas Reigl (TalTech / Eesti Pank) & Heili Hein (TalTech)<br/>
-`r format(Sys.time(), '%d %B %Y')`
+19 January 2021
 
 ---
 
