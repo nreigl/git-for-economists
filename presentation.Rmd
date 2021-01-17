@@ -374,6 +374,53 @@ Cons:
 - Review process of pull request
 
 ---
+# Merge conflicts 
+  
+- Collaborators work on separated isolated branches to avoid *live* merge conflicts 
+-  `git merge` command's primary function is to combine separate branches and resolve any conflicting
+edits
+- Most of the time Git will figure out how to resolve conflicting changes
+
+
+---
+# Merge conflicts (cont. )
+
+What if Git can not figure out how to resolve a conflicting change?
+
+```bash
+# README
+Some text here.
+<<<<<<< HEAD
+Text added by Partner 2.
+=======
+Text added by Partner 1.
+>>>>>>> 814e09178910383c128045ce67a58c9c1df3f558.
+More text here.
+```
+- `<<<<<<< HEAD` Indicates the start of the merge conflict.
+- `=======` Indicates the break point used for comparison.
+- `>>>>>>> <long string>` Indicates the end of the lines that had a merge conflict.
+
+
+---
+# Merge conflicts (cont. )
+
+Fixing these conflicts is a simple matter of (manually) editing the conflicting file<sup>1</sup>.
+- Delete the lines of the text that you don't want
+- Then, delete the special Git merge conflict symbols
+
+Once that's done, you should be able to stage, commit, pull and finally push your changes to the GitHub repo without any errors. 
+
+
+Caveats
+- P1 gets to decide what to keep because they fixed the merge conflict
+- However, the full commit history is preserved, so P2 can always recover their changes if desired
+ 
+
+.footnote[<sup>1</sup> If you know *VIM* you can use the terminal to edited the conflicting file but for more complicated merge conflicts, switching to a GUI can proove helpful. For example,  <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> offers a powerful merge conflict resolver interface. See Tips: Diff and merge tools in the Appendix.]
+
+
+---
 # Workflow visualized
 
 <div align="center">
