@@ -293,9 +293,15 @@ Command line based editors:
 
 Graphical User Interfaces (GUIs)
 
+<<<<<<< HEAD
 - RStudio
 - Visual Studio Code
 - GitKraken
+=======
+- [RStudio](https://rstudio.com/)
+- [VSCode](https://code.visualstudio.com/)
+- [Gitkraken](https://www.gitkraken.com/)
+>>>>>>> ba4ad5b (add hyperlink to GUI Editors slide)
 
 ---
 # Git workflows
