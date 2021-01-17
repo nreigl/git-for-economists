@@ -23,7 +23,7 @@ class: title-slide, center, middle
 &lt;img src="githublogo.png" height="100px" style="vertical-align:middle"&gt;
 &lt;br/&gt;&lt;br/&gt;
 Nicolas Reigl (TalTech / Eesti Pank) &amp; Heili Hein (TalTech)&lt;br/&gt;
-17 January 2021
+19 January 2021
 
 ---
 
@@ -31,10 +31,10 @@ Nicolas Reigl (TalTech / Eesti Pank) &amp; Heili Hein (TalTech)&lt;br/&gt;
 - **WHY?**
   - Good to stay in contact with other researchers, share skills
   - Git has become a core skill in many professions
-  
+
 - **WHAT?**
-  - 1.5 hours introduction to Git &amp; GitHub 
-  - Split between a **presentation** and a **live-tutorial** 
+  - 1.5 hours introduction to Git &amp; GitHub
+  - Split between a **presentation** and a **live-tutorial**
   - Ask questions whenever you feel like it!
 
 &lt;br/&gt;
@@ -168,7 +168,7 @@ Grant McDermont, [Big data in Economics](https://github.com/uo-ec510-2020-spring
 ---
 # Teaching
 
-- Update and test new teaching material before you make it public 
+- Update and test new teaching material before you make it public
 - Easier to upload and distribute new teaching material (when using GitHub)
 - Facilitate collaborative student projects
 - Important industry skill
@@ -213,9 +213,9 @@ name: learning
 
 - `git init`: start a new repository in the working directory
 - `git status`: query the state of your directory
-- `git add`: add new or modified files to the staging area 
+- `git add`: add new or modified files to the staging area
   - `git add .`: adds all file excluding those defined in the .gitignore
-  - `git add -u`: updates the index of an already staged file 
+  - `git add -u`: updates the index of an already staged file
   - `git add -A`: adds all file `Including` those defined in the .gitignore
 - `git commit`: commit changes in the index
 - `git branch`: create a branch  or list branches
@@ -262,7 +262,7 @@ git config --global core.autocrlf input # OSX
 ---
 # Editors
 
-Command line based editors: 
+Command line based editors:
 
  - Terminal with git capable shell
  - Git shell
@@ -324,9 +324,9 @@ Always pull from the upstream repo *before* you push any changes!
 - Review process of pull request
 
 ---
-# Merge conflicts 
-  
-- Collaborators work on separated isolated branches to avoid *live* merge conflicts 
+# Merge conflicts
+
+- Collaborators work on separated isolated branches to avoid *live* merge conflicts
 -  `git merge` command's primary function is to combine separate branches and resolve any conflicting
 edits
 - Most of the time Git will figure out how to resolve conflicting changes
@@ -359,13 +359,13 @@ Fixing these conflicts is a simple matter of (manually) editing the conflicting 
 - Delete the lines of the text that you don't want
 - Then, delete the special Git merge conflict symbols
 
-Once that's done, you should be able to stage, commit, pull and finally push your changes to the GitHub repo without any errors. 
+Once that's done, you should be able to stage, commit, pull and finally push your changes to the GitHub repo without any errors.
 
 
 Caveats
 - P1 gets to decide what to keep because they fixed the merge conflict
 - However, the full commit history is preserved, so P2 can always recover their changes if desired
- 
+
 
 .footnote[&lt;sup&gt;1&lt;/sup&gt; If you know *VIM* you can use the terminal to edited the conflicting file but for more complicated merge conflicts, switching to a GUI can proove helpful. For example,  &lt;a href="https://code.visualstudio.com/" target="_blank"&gt;VS Code&lt;/a&gt; offers a powerful merge conflict resolver interface. See Tips: Diff and merge tools in the Appendix.]
 
@@ -435,9 +435,9 @@ Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/re
 ---
 #  Tips: Diff and merge tools
 
-Add the following configuration to your *gitconfig* to use the VS Code editor for diff and merge operations. 
+Add the following configuration to your *gitconfig* to use the VS Code editor for diff and merge operations.
 
-```bash 
+```bash
 tool
 [merge]
     tool = vscode
@@ -449,7 +449,7 @@ tool
     cmd = code --wait --diff $LOCAL $REMOTE
 ```
 
-Type ```git difftool``` in your terminal to open VS Code for diff operations and  ```git mergetool``` to open VS Code for merge operations. 
+Type ```git difftool``` in your terminal to open VS Code for diff operations and  ```git mergetool``` to open VS Code for merge operations.
 
 ---
 # Personal remote workflow (Option 2)
