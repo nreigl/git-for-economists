@@ -317,10 +317,10 @@ A Review of Git Workflow Management https://medium.com/@hengfeng/a-review-of-git
 # Basic workflow
 
 1. Create an empty folder
-2. Init repository (**git init**)
+2. Initiate repository (`git init`)
 3. Add files & annotate them
-4. Add the files to the staging area (**git add**)
-5. Commit the files (**git commit**)
+4. Add the files to the staging area (`git add`)
+5. Commit the files (`git commit`)
 
 
 ---
