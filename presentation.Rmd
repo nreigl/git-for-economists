@@ -502,3 +502,24 @@ tool
 
 Type ```git difftool``` in your terminal to open VS Code for diff operations and  ```git mergetool``` to open VS Code for merge operations. 
 
+---
+# Personal remote workflow (Option 2)
+
+- Create a new repo on GitHub
+   - Add README.md, .gitignore and license. Can also add collaborators
+- Clone remote to an empty, non-VC local directory
+- Work on your local repo
+- Push from the local to the remote repo
+
+Pros:
+ - Creating the repo on GitHub first means that it will always be "upstream" of your (and any other) local copies
+  - In effect, this allows GitHub to act as the central node in the distributed VC network
+  - Especially valuable when you are collaborating on a project with others
+
+Cons:
+ - Not every project goes on GitHub
+ - Certain local projects *might* collide with GitHub created repos
+
+
+ Always pull from the upstream repo *before* you push any changes
+
