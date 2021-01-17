@@ -220,22 +220,6 @@ name: learning
 ---
 # Basic Git shell commands
 
-<<<<<<< HEAD
-- **git init**: start a new repository in the working directory
-- **git status**: query the state of your directory
-- **git add**: add new or modified files to the staging area 
- - **git add .**: adds all files excluding those defined in the .gitignore
- - **git add -u**: updates the index of an already staged file 
- - **git add -A**: adds all files **Including** those defined in the .gitignore
-- **git commit**: commit changes in the index
-- **git branch**: create a branch or list branches
-- **git checkout**: switch within a branch or between branches
-- **git diff**: show what changed wrt. the last commit or index
-- **git log**: show the commit history
-- **git push**: send your local changes to a remote server
-- **git pull (git fetch; git merge)**: get last changes from a remote
-- **git clone**: create local copy of public source project
-=======
 - `git init`: start a new repository in the working directory
 - `git status`: query the state of your directory
 - `git add`: add new or modified files to the staging area 
@@ -250,7 +234,6 @@ name: learning
 - `git push`: send your local changes to a remote server
 - `git pull` (`git fetch`; `git merge`): get last changes from a remote
 - `git clone`: create local copy of public source project
->>>>>>> 2240b8b (Correct code markdown syntax)
 
 ---
 # Setup
@@ -295,15 +278,9 @@ Command line based editors:
 
 Graphical User Interfaces (GUIs)
 
-<<<<<<< HEAD
-- RStudio
-- Visual Studio Code
-- GitKraken
-=======
 - [RStudio](https://rstudio.com/)
 - [VSCode](https://code.visualstudio.com/)
 - [Gitkraken](https://www.gitkraken.com/)
->>>>>>> ba4ad5b (add hyperlink to GUI Editors slide)
 
 ---
 # Git workflows
@@ -343,29 +320,6 @@ Cons:
 
 Always pull from the upstream repo *before* you push any changes!
 
-<<<<<<< HEAD
----
-# Personal remote workflow (option 2)
-
-- Create a new repo on GitHub
-   - Add README.md, .gitignore and license. Can also add collaborators
-- Clone remote to an emppty, non-VC local directory
-- Work on your local repo
-- Push from the local to the remote repo
-
-Pros:
- - Creating the repo on GitHub first means that it will always be "upstream" of your (and any other) local copies
-  - In effect, this allows GitHub to act as the central node in the distributed VC network
-  - Especially valuable when you are collaborating on a project with others
-
-Cons:
- - Not every project goes on GitHub
- - Certain local projects *might* collide with GitHub created repos
-
-
- Always pull from the upstream repo *before* you push any changes!
-=======
->>>>>>> 1dc6589 (Minor changes in ordering and language editing)
 
 ---
 # Collaborating workflow
@@ -488,11 +442,7 @@ Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/re
 
 
 ---
-<<<<<<< HEAD
-#  Tips: diff and merge tool
-=======
 #  Tips: Diff and merge tools
->>>>>>> 1dc6589 (Minor changes in ordering and language editing)
 
 Add the following configuration to your *gitconfig* to use the VS Code editor for diff and merge operations. 
 
