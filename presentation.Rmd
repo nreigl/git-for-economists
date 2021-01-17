@@ -218,6 +218,7 @@ name: learning
 ---
 # Basic Git shell commands
 
+<<<<<<< HEAD
 - **git init**: start a new repository in the working directory
 - **git status**: query the state of your directory
 - **git add**: add new or modified files to the staging area 
@@ -232,6 +233,22 @@ name: learning
 - **git push**: send your local changes to a remote server
 - **git pull (git fetch; git merge)**: get last changes from a remote
 - **git clone**: create local copy of public source project
+=======
+- `git init`: start a new repository in the working directory
+- `git status`: query the state of your directory
+- `git add`: add new or modified files to the staging area 
+  - `git add .`: adds all file excluding those defined in the .gitignore
+  - `git add -u`: updates the index of an already staged file 
+  - `git add -A`: adds all file `Including` those defined in the .gitignore
+- `git commit`: commit changes in the index
+- `git branch`: create a branch  or list branches
+- `git checkout`: switch within a branch or between branches
+- `git diff`: show what changed wrt. the last commit or index
+- `git log`: show the commit history
+- `git push`: send your local changes to a remote server
+- `git pull` (`git fetch`; `git merge`): get last changes from a remote
+- `git clone`: create local copy of public source project
+>>>>>>> 2240b8b (Correct code markdown syntax)
 
 ---
 # Setup
