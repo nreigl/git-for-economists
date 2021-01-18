@@ -439,7 +439,7 @@ name: appendix
      - Get fresh view on all the things that happened on the remote
   - `git pull`: retrieves the metadata and a copy of your files from the remote
     - `git pull`: tries to merge remote changes with your local ones, so a *merge conflict* can happen
-    - Don't use `git pull` if you have a dirty working copy local repo
+    - Don't use `git pull` if you have a *dirty* local repo
 
 
 ---
@@ -477,7 +477,7 @@ Type ```git difftool``` in your terminal to open VS Code for diff operations and
 
 My personal approach 
 
-- Even if you work on only on a solo project creating branches can be very useful 
+- Even if you work only on a solo project creating branches can be very useful 
  - You can experiment without taking risks to the main part of the project
 - Commit early and often
 - Keep a logical sequence of commits 
