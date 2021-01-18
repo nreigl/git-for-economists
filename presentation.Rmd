@@ -266,7 +266,10 @@ git config --global core.autocrlf input # OSX
 
   - Create GitHub account
   - Star, clone, and fork other projects
-  - GitHub Issues are a great way to collaborate (and learn new things)
+  - GitHub Issues<sup>1</sup> are a great way to collaborate (and learn new things)
+
+
+.footnote[<sup>1</sup> If you spot any lectures in this presentation, please file an issue [here](https://github.com/nreigl/git-for-economists/issues)! ]
 
 ---
 # Editors
@@ -364,7 +367,7 @@ More text here.
 ---
 # Merge conflicts (cont. )
 
-Fixing these conflicts is a simple matter of (manually) editing the conflicting file<sup>1</sup>.
+Fixing these conflicts is a simple matter of (manually) editing the conflicting file<sup>2</sup>.
 - Delete the lines of the text that you don't want
 - Then, delete the special Git merge conflict symbols
 
@@ -376,7 +379,7 @@ Caveats
 - However, the full commit history is preserved, so P2 can always recover their changes if desired
 
 
-.footnote[<sup>1</sup> If you know *VIM* you can use the terminal to edited the conflicting file but for more complicated merge conflicts, switching to a GUI can proove helpful. For example,  <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> offers a powerful merge conflict resolver interface. See Tips: Diff and merge tools in the Appendix.]
+.footnote[<sup>2</sup> If you know *VIM* you can use the terminal to edited the conflicting file but for more complicated merge conflicts, switching to a GUI can proove helpful. For example,  <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> offers a powerful merge conflict resolver interface. See Tips: Diff and merge tools in the Appendix.]
 
 
 ---
