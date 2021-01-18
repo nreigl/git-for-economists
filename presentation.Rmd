@@ -40,6 +40,7 @@ Nicolas Reigl (TalTech / Eesti Pank) & Heili Hein (TalTech)<br/>
 - **WHY?**
   - Good to stay in contact with other researchers, share skills
   - Git has become a core skill in many professions
+  - Git is a prerequisite for other tutorials we could teach 
 
 - **WHAT?**
   - 1.5 hours introduction to Git & GitHub
@@ -92,7 +93,7 @@ Alternatives
 ---
 # Why learn Git as an economist?
 
-Tasks economists perform today:
+Common tasks for modern day economists:
 
 - Statistical programming
 - Collaborate (interdisciplinary) (on open source projects)
@@ -255,7 +256,7 @@ git config --global core.editor "code --wait" # sets VS Code as core editor
 git config --global -e
 ```
 
-Attention!
+Line ending configuration:
 ```bash
 git config --global core.autocrlf true # Windows
 git config --global core.autocrlf input # OSX
@@ -319,7 +320,7 @@ Pros:
 
 Cons:
  - Not a good workflow for non-empty remotes
- - In case of non-language environment -> no README.md, no lisence, no .gitignore
+ - In case of non-language environment -> no README.md, no license, no .gitignore
 
 Always pull from the upstream repo *before* you push any changes!
 
