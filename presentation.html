@@ -4,7 +4,7 @@
     <title>Git for economists</title>
     <meta charset="utf-8" />
     <meta name="author" content="Nicolas Reigl (TalTech / Eesti Pank) &amp; Heili Hein (TalTech)" />
-    <meta name="date" content="2021-01-17" />
+    <meta name="date" content="2021-01-18" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
@@ -83,7 +83,7 @@ Alternatives
 ---
 # Why learn Git as an economist?
 
-Tasks economists perform today:
+Common tasks for modern day economists:
 
 - Statistical programming
 - Collaborate (interdisciplinary) (on open source projects)
@@ -214,9 +214,9 @@ name: learning
 - `git init`: start a new repository in the working directory
 - `git status`: query the state of your directory
 - `git add`: add new or modified files to the staging area
-  - `git add .`: adds all file excluding those defined in the .gitignore
+  - `git add .`: adds all file **excluding** those defined in the .gitignore
   - `git add -u`: updates the index of an already staged file
-  - `git add -A`: adds all file `Including` those defined in the .gitignore
+  - `git add -A`: adds all file **including** those defined in the .gitignore
 - `git commit`: commit changes in the index
 - `git branch`: create a branch  or list branches
 - `git checkout`: switch within a branch or between branches
@@ -229,7 +229,7 @@ name: learning
 ---
 # Setup
 
-- Download [git](https://git-scm.com/downloads)
+- Download [Git](https://git-scm.com/downloads)
 - Install and if necessary set path
 - Terminal editor
 - Configure your name and &amp; email
@@ -242,11 +242,11 @@ git config --global user.email "your@email.com"
 
 Tips:
 ```bash
-git config --global core.editor "code --wait" # sets VS Vode as core editor
+git config --global core.editor "code --wait" # sets VS Code as core editor
 git config --global -e
 ```
 
-Attention!
+Line ending configuration:
 ```bash
 git config --global core.autocrlf true # Windows
 git config --global core.autocrlf input # OSX
@@ -257,7 +257,10 @@ git config --global core.autocrlf input # OSX
 
   - Create GitHub account
   - Star, clone, and fork other projects
-  - GitHub Issues are a great way to collaborate (and learn new things)
+  - GitHub Issues&lt;sup&gt;1&lt;/sup&gt; are a great way to collaborate (and learn new things)
+
+
+.footnote[&lt;sup&gt;1&lt;/sup&gt; If you spot any mistakes in this presentation, please file an issue [here](https://github.com/nreigl/git-for-economists/issues)! ]
 
 ---
 # Editors
@@ -307,7 +310,7 @@ Pros:
 
 Cons:
  - Not a good workflow for non-empty remotes
- - In case of non-language environment -&gt; no README.md, no lisence, no .gitignore
+ - In case of non-language environment -&gt; no README.md, no license, no .gitignore
 
 Always pull from the upstream repo *before* you push any changes!
 
@@ -355,7 +358,7 @@ More text here.
 ---
 # Merge conflicts (cont. )
 
-Fixing these conflicts is a simple matter of (manually) editing the conflicting file&lt;sup&gt;1&lt;/sup&gt;.
+Fixing these conflicts is a simple matter of (manually) editing the conflicting file&lt;sup&gt;2&lt;/sup&gt;.
 - Delete the lines of the text that you don't want
 - Then, delete the special Git merge conflict symbols
 
@@ -367,7 +370,7 @@ Caveats
 - However, the full commit history is preserved, so P2 can always recover their changes if desired
 
 
-.footnote[&lt;sup&gt;1&lt;/sup&gt; If you know *VIM* you can use the terminal to edited the conflicting file but for more complicated merge conflicts, switching to a GUI can proove helpful. For example,  &lt;a href="https://code.visualstudio.com/" target="_blank"&gt;VS Code&lt;/a&gt; offers a powerful merge conflict resolver interface. See Tips: Diff and merge tools in the Appendix.]
+.footnote[&lt;sup&gt;2&lt;/sup&gt; If you know *VIM* you can use the terminal to edited the conflicting file but for more complicated merge conflicts, switching to a GUI can proove helpful. For example,  &lt;a href="https://code.visualstudio.com/" target="_blank"&gt;VS Code&lt;/a&gt; offers a powerful merge conflict resolver interface. See Tips: Diff and merge tools in the Appendix.]
 
 
 ---
@@ -420,13 +423,22 @@ name: appendix
 
 
 ---
-# Tips: working with remotes
+# Tips: working with branches 
 
-- `git fecht, git merge` is better than `git pull` if you suspect merge conflicts
-- Do **NOT** `git rebase` public open source repos
+- `git fecht`, `git merge` is better than `git pull` if you face *difficult* merges
+  - `git fecht`: tells the remote to retrieve the latest meta-data from the remote but does not transfer any files
+     - Get fresh view on all the things that happened on the remote
+  - `git pull`: retrieves the metadata and a copy of your files from the remote
+    - `git pull`: tries to merge remote changes with your local ones, so a *merge conflict* can happen
+    - Don't use `git pull` if you have a dirty working copy local repo
+
+
+---
+# Tips: working with branches (cont.)
+`git rebase`: Another powerful Git utilities that specializes in integrating changes from one branch onto another (similar to `git merge`). However, do **NOT** `git rebase` public open source repos. 
 
 &lt;div align="center"&gt;
-&lt;img src="https://assets-global.website-files.com/5d7678efce0c5739c9bc3bf1/5dc320c753535c09450e4d76_git-rebase-2-example.png" height=400&gt;
+&lt;img src="https://assets-global.website-files.com/5d7678efce0c5739c9bc3bf1/5dc320c753535c09450e4d76_git-rebase-2-example.png" height=350&gt;
 &lt;/div&gt;
 
 Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/regain-control-of-branches-with-git-rebase-onto
@@ -450,6 +462,23 @@ tool
 ```
 
 Type ```git difftool``` in your terminal to open VS Code for diff operations and  ```git mergetool``` to open VS Code for merge operations.
+
+---
+# More tips: branch, commit, and push 
+
+My personal approach 
+
+- Even if you work on only on a solo project creating branches can be very useful 
+ - You can experiment without taking risks to the main part of the project
+- Commit early and often
+- Keep a logical sequence of commits 
+  - For example, create a *separate* commit if you work on the data section of a paper and another *separate* commit if you work on the methodology section of your paper. 
+- Write meaningful commit messages
+- Don't keep your collaborators waiting. Push everything that you want to collaborators to see asap
+
+
+
+
 
 ---
 # Personal remote workflow (Option 2)

@@ -40,7 +40,6 @@ Nicolas Reigl (TalTech / Eesti Pank) & Heili Hein (TalTech)<br/>
 - **WHY?**
   - Good to stay in contact with other researchers, share skills
   - Git has become a core skill in many professions
-  - Git is a prerequisite for other tutorials we could teach 
 
 - **WHAT?**
   - 1.5 hours introduction to Git & GitHub
@@ -239,7 +238,7 @@ name: learning
 ---
 # Setup
 
-- Download [git](https://git-scm.com/downloads)
+- Download [Git](https://git-scm.com/downloads)
 - Install and if necessary set path
 - Terminal editor
 - Configure your name and & email
@@ -270,7 +269,7 @@ git config --global core.autocrlf input # OSX
   - GitHub Issues<sup>1</sup> are a great way to collaborate (and learn new things)
 
 
-.footnote[<sup>1</sup> If you spot any lectures in this presentation, please file an issue [here](https://github.com/nreigl/git-for-economists/issues)! ]
+.footnote[<sup>1</sup> If you spot any mistakes in this presentation, please file an issue [here](https://github.com/nreigl/git-for-economists/issues)! ]
 
 ---
 # Editors
@@ -433,13 +432,22 @@ name: appendix
 
 
 ---
-# Tips: working with remotes
+# Tips: working with branches 
 
-- `git fecht, git merge` is better than `git pull` if you suspect merge conflicts
-- Do **NOT** `git rebase` public open source repos
+- `git fecht`, `git merge` is better than `git pull` if you face *difficult* merges
+  - `git fecht`: tells the remote to retrieve the latest meta-data from the remote but does not transfer any files
+     - Get fresh view on all the things that happened on the remote
+  - `git pull`: retrieves the metadata and a copy of your files from the remote
+    - `git pull`: tries to merge remote changes with your local ones, so a *merge conflict* can happen
+    - Don't use `git pull` if you have a dirty working copy local repo
+
+
+---
+# Tips: working with branches (cont.)
+`git rebase`: Another powerful Git utilities that specializes in integrating changes from one branch onto another (similar to `git merge`). However, do **NOT** `git rebase` public open source repos. 
 
 <div align="center">
-<img src="https://assets-global.website-files.com/5d7678efce0c5739c9bc3bf1/5dc320c753535c09450e4d76_git-rebase-2-example.png" height=400>
+<img src="https://assets-global.website-files.com/5d7678efce0c5739c9bc3bf1/5dc320c753535c09450e4d76_git-rebase-2-example.png" height=350>
 </div>
 
 Regain Control of Branches with Git Rebase --onto https://www.headway.io/blog/regain-control-of-branches-with-git-rebase-onto
@@ -463,6 +471,23 @@ tool
 ```
 
 Type ```git difftool``` in your terminal to open VS Code for diff operations and  ```git mergetool``` to open VS Code for merge operations.
+
+---
+# More tips: branch, commit, and push 
+
+My personal approach 
+
+- Even if you work on only on a solo project creating branches can be very useful 
+ - You can experiment without taking risks to the main part of the project
+- Commit early and often
+- Keep a logical sequence of commits 
+  - For example, create a *separate* commit if you work on the data section of a paper and another *separate* commit if you work on the methodology section of your paper. 
+- Write meaningful commit messages
+- Don't keep your collaborators waiting. Push everything that you want to collaborators to see asap
+
+
+
+
 
 ---
 # Personal remote workflow (Option 2)
