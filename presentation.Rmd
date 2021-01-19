@@ -168,7 +168,7 @@ What is version control? https://uidaholib.GitHub.io/get-git/1why.html
 
 - Many journals require data & code with submissions
 - Proper version control makes reproduction easier
- - GiHub: DOI integration, off-the-shelf-licensing
+ - GitHub: DOI integration, off-the-shelf-licensing
 
 > VC and open sourcing of your code operationalises the idea of open science and reproducability
 
